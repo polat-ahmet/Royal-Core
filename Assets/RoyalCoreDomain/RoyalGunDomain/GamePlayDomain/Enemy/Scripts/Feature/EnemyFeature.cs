@@ -1,0 +1,79 @@
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Enemy.Scripts.Controllers;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Animation;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Health;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Movement;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.SpriteRender;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Scripts.Services.ControlledAgentService;
+using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature;
+using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.ModelProvider;
+using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.ViewProvider;
+using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Models;
+using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Services;
+using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Views;
+using RoyalCoreDomain.Scripts.Services.UpdateService;
+using UnityEngine;
+
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Enemy.Scripts.Feature
+{
+    public class EnemyFeature : BaseFeature
+    {
+        private readonly string _modelKey;
+        private readonly Vector2 _spawnPos;
+        private readonly string _viewKey;
+
+        private EnemyController _controller;
+        private AgentModel _model;
+        private AgentView _view;
+
+        public EnemyFeature(string address, IFeature parent, Vector2 spawnPos,
+            string viewKey = "Enemy/Views/EnemyView",
+            string modelKey = "Enemy/Models/EnemyModel")
+            : base(address, parent)
+        {
+            _spawnPos = spawnPos;
+            _viewKey = viewKey;
+            _modelKey = modelKey;
+        }
+
+        protected override void OnInstall()
+        {
+            var models = Context.ImportService<IModelProvider>();
+            var views = Context.ImportService<IViewProvider>();
+
+            _view = views.LoadView<AgentView>(_viewKey);
+            _view.transform.position = _spawnPos;
+            _model = models.LoadSO<AgentModel>(_modelKey);
+
+            var animation = new AnimatorController(_view);
+            var health = new HealthController(_model);
+            var movement = new MovementController(_view, _model);
+            var render = new RenderController(_view);
+
+            Context.Models.Bind(_model);
+            Context.Views.Bind(_view);
+
+            _controller = new EnemyController(_model, _view, animation, health, movement, render,
+                Context.ImportService<IControlledAgentService>().TryGetTransform(),
+                Context.ImportService<ITargetRegistry>(), Context.ImportService<IUpdateService<IFixedUpdatable>>());
+            Context.Controllers.Bind(_controller);
+        }
+
+        protected override void OnStart()
+        {
+            Context.ImportService<IUpdateService<IUpdatable>>().RegisterUpdatable(_controller);
+        }
+
+
+        protected override void OnDispose()
+        {
+            Debug.Log("Feature destroyed: " + Address);
+
+            Context.ImportService<IUpdateService<IUpdatable>>().UnregisterUpdatable(_controller);
+
+            if (Context.TryImportService<IViewProvider>(out var vp)) vp.Release(_view);
+            _view = null;
+
+            _controller.Dispose();
+        }
+    }
+}
