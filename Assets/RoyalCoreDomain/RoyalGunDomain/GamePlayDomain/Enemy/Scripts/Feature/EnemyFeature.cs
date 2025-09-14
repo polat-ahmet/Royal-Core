@@ -5,6 +5,7 @@ using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Movement;
 using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.SpriteRender;
 using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Scripts.Services.ControlledAgentService;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature;
+using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature.Builder;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.ModelProvider;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.ViewProvider;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Models;
@@ -55,6 +56,7 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Enemy.Scripts.Feature
             _controller = new EnemyController(_model, _view, animation, health, movement, render,
                 Context.ImportService<IControlledAgentService>().TryGetTransform(),
                 Context.ImportService<ITargetRegistry>(), Context.ImportService<IUpdateService<IFixedUpdatable>>());
+            _controller.SetupCallbacks(OnEnemyDied);
             Context.Controllers.Bind(_controller);
         }
 
@@ -63,17 +65,25 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Enemy.Scripts.Feature
             Context.ImportService<IUpdateService<IUpdatable>>().RegisterUpdatable(_controller);
         }
 
+        private void OnEnemyDied()
+        {
+            Context.ImportService<IFeatureFactory>().Remove(this);
+        }
 
         protected override void OnDispose()
         {
-            Debug.Log("Feature destroyed: " + Address);
-
+            Debug.Log("Enemy Feature OnDispose");
+            
+            _controller.Dispose();
             Context.ImportService<IUpdateService<IUpdatable>>().UnregisterUpdatable(_controller);
 
-            if (Context.TryImportService<IViewProvider>(out var vp)) vp.Release(_view);
+            if (Context.TryImportService<IViewProvider>(out var vp))
+            {
+                Debug.Log("Enemy Feature View Destroyed");
+                vp.Release(_view.gameObject);
+            }
             _view = null;
 
-            _controller.Dispose();
         }
     }
 }

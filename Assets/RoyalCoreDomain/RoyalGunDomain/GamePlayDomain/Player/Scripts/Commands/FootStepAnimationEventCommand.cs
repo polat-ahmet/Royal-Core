@@ -1,4 +1,5 @@
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Command;
+using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context;
 using RoyalCoreDomain.Scripts.Services.Audio;
 
 namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Player.Scripts.Commands
@@ -12,9 +13,9 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Player.Scripts.Commands
             _audioService.PlayAudio(AudioClipType.Walk, AudioChannelType.Fx);
         }
 
-        public override void ResolveDependencies()
+        public override void Resolve(FeatureContext context)
         {
-            _audioService = _context.ImportService<IAudioService>();
+            _audioService = context.ImportService<IAudioService>();
         }
     }
 }

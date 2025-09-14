@@ -1,7 +1,7 @@
 namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Command
 {
-    public interface ICommandVoid : ICommand
+    public interface ICommand
     {
-        void Execute();
+        
     }
 }

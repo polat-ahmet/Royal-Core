@@ -1,6 +1,7 @@
 using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Movement;
 using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Scripts.Services.ControlledAgentService;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Command;
+using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context;
 
 namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.RoyalFeatureTemplate.Scripts.Commands
 {
@@ -14,9 +15,9 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.RoyalFeatureTempla
             _inputControlledMovable.SetMoveVector(_inputChangedCommandData._joystickInputPort.InputVector);
         }
 
-        public override void ResolveDependencies()
+        public override void Resolve(FeatureContext context)
         {
-            var control = _context.ImportService<IControlledAgentService>();
+            var control = context.ImportService<IControlledAgentService>();
             if (control.TryGet<IMovable>(out var movable))
                 _inputControlledMovable = movable;
         }

@@ -11,11 +11,16 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Command
             _context = context;
         }
 
-        public TCommand CreateCommandVoid<TCommand>() where TCommand : ICommandVoid, new()
+        public TCommand CreateAndResolveCommand<TCommand>() where TCommand : BaseCommand, new()
         {
             var command = new TCommand();
-            command.SetContext(_context);
-            command.ResolveDependencies();
+            command.Resolve(_context);
+            return command;
+        }
+        
+        public TCommand CreateCommand<TCommand>() where TCommand : ICommand, new()
+        {
+            var command = new TCommand();
             return command;
         }
     }

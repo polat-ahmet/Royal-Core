@@ -1,3 +1,4 @@
+using System;
 using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Enemy.Scripts.Ports;
 using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Animation;
 using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Health;
@@ -9,6 +10,7 @@ using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Se
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Views;
 using RoyalCoreDomain.Scripts.Services.UpdateService;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Enemy.Scripts.Controllers
 {
@@ -27,6 +29,8 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Enemy.Scripts.Controller
 
         private readonly Transform _target;
         private readonly AgentView _view;
+
+        private Action OnEnemyDied{ get; set; }
 
         public EnemyController(AgentModel model, AgentView view, IAnimatable animationController,
             IHittable healthController, IMovable movementController, IRenderController rendererController,
@@ -50,6 +54,11 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Enemy.Scripts.Controller
 
         public float CurrentHealth => _healthController.CurrentHealth;
         public float MaxHealth => _healthController.MaxHealth;
+        
+        public void SetupCallbacks(Action onEnemyDied)
+        {
+            OnEnemyDied = onEnemyDied;
+        }
 
         public void Hit(float amount)
         {
@@ -76,9 +85,19 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Enemy.Scripts.Controller
         private void OnDie()
         {
             Debug.Log("Enemy Controller Die");
+            OnEnemyDied?.Invoke();
+            
             // animasyon, sfx, loot vs…
-            // _registry.Unregister(this);
             // View’ı iade etmek için Feature Dispose akışı iş görecek; istersen burada da tetikleyebilirsin
+        }
+
+        public override void Dispose()
+        {
+            Debug.Log("Enemy Controller Dispose");
+            OnEnemyDied = null;
+            _fixedUpdateService.UnregisterUpdatable(_movementController as IFixedUpdatable);
+            
+            _registry.Unregister(this);
         }
     }
 }

@@ -2,6 +2,6 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Command
 {
     public interface ICommandFactory
     {
-        TCommand CreateCommandVoid<TCommand>() where TCommand : ICommandVoid, new();
+        TCommand CreateAndResolveCommand<TCommand>() where TCommand : BaseCommand, new();
     }
 }

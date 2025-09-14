@@ -55,5 +55,10 @@ namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Script
         {
             _OnAnimationEventTriggered = onAnimationEventTriggered;
         }
+
+        private void OnDestroy()
+        {
+            _OnAnimationEventTriggered = null;
+        }
     }
 }

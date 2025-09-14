@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e37c729c8504721b818eea431f9569f, type: 3}
   m_Name: RifleModel
   m_EditorClassIdentifier: 
-  BulletSpeed: 3
+  BulletSpeed: 10
   BulletDamage: 10
-  BulletLife: 2.5
+  BulletLife: 1.5
   BulletKey: Bullets/StandardBullet
-  Range: 12
-  FireRate: 1
-  MagSize: 10
+  Range: 10
+  FireRate: 5
+  MagSize: 15
   ReloadTime: 1
   SpreadDegrees: 2.5
   MuzzleFxKey: FX/MuzzleFlash

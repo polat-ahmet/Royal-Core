@@ -18,6 +18,12 @@ namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Script
         {
         }
 
+        protected override void OnPreInstall()
+        {
+            PlanChild("Player", (addr, p) => new PlayerFeature(addr, p));
+            PlanChild("Input", (addr, p) => new InputFeature(addr, p));
+        }
+
         protected override void OnInstall()
         {
             var factory = Context.ImportService<IFeatureFactory>();
@@ -32,9 +38,10 @@ namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Script
 
             Context.Services.Bind<IBulletFactory>(new BulletFactoryService(Context.ImportService<IViewProvider>()));
 
-            var player = factory.Add(this, "player", (addr, p) => new PlayerFeature(addr, p));
-            factory.Add(this, "input", (addr, p) => new InputFeature(addr, p));
+            // var player = factory.Add(this, "player", (addr, p) => new PlayerFeature(addr, p));
+            // factory.Add(this, "input", (addr, p) => new InputFeature(addr, p));
 
+            //TODO get spawner data
             var spawnerPositions = new List<Vector2>();
             spawnerPositions.Add(new Vector2(5, 5));
             spawnerPositions.Add(new Vector2(-5, -5));

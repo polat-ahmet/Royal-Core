@@ -20,6 +20,11 @@ namespace RoyalCoreDomain.Scripts.Bootstrap
         {
         }
 
+        protected override void OnPreInstall()
+        {
+            PlanChild("GamePlay", (addr, p) => new GamePlayFeature(addr, p));
+        }
+
         protected override void OnInstall()
         {
             Context.Services.Bind<IFeatureRegistry>(new FeatureRegistry());
@@ -68,21 +73,19 @@ namespace RoyalCoreDomain.Scripts.Bootstrap
 
         protected override void OnStart()
         {
-            var timeService = Context.ImportService<ITimeService>();
-            var updateService = Context.ImportService<IUpdateService<IUpdatable>>();
-            var fixedUpdateService = Context.ImportService<IUpdateService<IFixedUpdatable>>();
-            var lateUpdateService = Context.ImportService<IUpdateService<ILateUpdatable>>();
-
             var host = _view.DriversParent != null ? _view.DriversParent.gameObject : _view.gameObject;
 
             var driver = host.AddComponent<UpdateDriver>();
-            driver.Initialize(timeService, updateService, fixedUpdateService, lateUpdateService);
+            driver.Initialize(Context.ImportService<ITimeService>(), 
+                Context.ImportService<IUpdateService<IUpdatable>>(),
+                Context.ImportService<IUpdateService<IFixedUpdatable>>(),
+                Context.ImportService<IUpdateService<ILateUpdatable>>());
 
             // var cameraService = Context.ImportService<ICameraFollowService>();
             // lateUpdateService.RegisterUpdatable(cameraService);
 
-            var factory = Context.ImportService<IFeatureFactory>();
-            factory.Add(this, "game", (addr, p) => new GamePlayFeature(addr, p));
+            // var factory = Context.ImportService<IFeatureFactory>();
+            // factory.Add(this, "GamePlay", (addr, p) => new GamePlayFeature(addr, p));
         }
 
         protected override void OnDispose()

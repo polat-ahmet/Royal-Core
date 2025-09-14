@@ -21,9 +21,12 @@ namespace RoyalCoreDomain.Scripts.Bootstrap
             _initialized = true;
             DontDestroyOnLoad(gameObject);
 
-            _core = new CoreFeature("core");
+            _core = new CoreFeature("Core");
+            _core.PreInstall();
             _core.Install();
+            _core.Resolve();
             _core.Start();
+            
         }
 
         private void OnDestroy()

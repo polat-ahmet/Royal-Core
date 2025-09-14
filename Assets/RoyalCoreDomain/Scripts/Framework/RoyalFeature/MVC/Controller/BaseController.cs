@@ -1,3 +1,5 @@
+using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context;
+
 namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.MVC.Controller
 {
     // public abstract class BaseController<TModel, TView> : IController where TModel : IModel where TView : IView
@@ -11,9 +13,13 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.MVC.Controller
     //         _view = view;
     //     }
     // }
-    public abstract class BaseController : IController
+    public abstract class BaseController : IController, IResolvable
     {
         public virtual void Dispose()
+        {
+        }
+
+        public virtual void Resolve(FeatureContext context)
         {
         }
     }

@@ -6,8 +6,10 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature.Builder
 {
     public interface IFeatureFactory : IService
     {
+        // public void Build(IFeature root);
+        
         // Programatik ekleme (sync)
-        T Add<T>(IFeature parent, string name, Func<string, IFeature, T> create, string id = null)
+        T AddDynamic<T>(IFeature parent, string name, Func<string, IFeature, T> create, string id = null)
             where T : IFeature;
 
         // Programatik kaldırma

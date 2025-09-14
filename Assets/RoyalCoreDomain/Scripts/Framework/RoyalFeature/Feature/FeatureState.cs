@@ -2,9 +2,11 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature
 {
     public enum FeatureState
     {
-        Created,
+        New,
+        PreInstalled,
         Installed,
-        Active,
+        Resolved,
+        Started,
         Paused,
         Stopped,
         Disposed

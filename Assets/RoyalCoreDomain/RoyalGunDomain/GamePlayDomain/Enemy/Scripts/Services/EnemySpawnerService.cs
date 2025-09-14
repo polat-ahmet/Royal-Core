@@ -20,7 +20,7 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Enemy.Scripts.Services
 
         public EnemySpawnerService(BaseFeature baseFeature, IFeatureFactory factory, ITargetRegistry targetRegistry,
             List<Vector2> spawns,
-            float interval = 5f)
+            float interval = 3f)
         {
             _baseFeature = baseFeature;
             _factory = factory;
@@ -43,7 +43,7 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Enemy.Scripts.Services
         {
             if (_spawnPoints.Count == 0) return;
             var p = _spawnPoints[Random.Range(0, _spawnPoints.Count)];
-            _factory.Add(_baseFeature, "enemy" + _targetRegistry.All.Count,
+            _factory.AddDynamic(_baseFeature, "Enemy" + _targetRegistry.All.Count,
                 (addr, parent) => new EnemyFeature(addr, parent, p));
         }
     }

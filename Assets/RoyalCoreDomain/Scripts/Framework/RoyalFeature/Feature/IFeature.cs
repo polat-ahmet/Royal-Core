@@ -13,7 +13,10 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature
         FeatureContext Context { get; }
 
         // lifecycle
+        void Build();
+        void PreInstall();
         void Install();
+        void Resolve();
         void Start();
         void Pause();
         void Resume();

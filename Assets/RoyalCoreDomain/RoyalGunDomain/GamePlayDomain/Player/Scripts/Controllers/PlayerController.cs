@@ -75,7 +75,7 @@ namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Script
 
         private void OnAnimationEventTriggered(AnimationEventPayloadSO animationEvent)
         {
-            _commandFactory.CreateCommandVoid<FootStepAnimationEventCommand>().Execute();
+            _commandFactory.CreateAndResolveCommand<FootStepAnimationEventCommand>().Execute();
         }
 
         public override void Dispose()

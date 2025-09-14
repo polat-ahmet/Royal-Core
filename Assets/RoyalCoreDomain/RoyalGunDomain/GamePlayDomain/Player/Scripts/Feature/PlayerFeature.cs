@@ -33,6 +33,11 @@ namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Script
             _modelKey = modelKey;
         }
 
+        protected override void OnPreInstall()
+        {
+            PlanChild("Weapon", (addr, parent) => new WeaponFeature(addr, parent));
+        }
+
         protected override void OnInstall()
         {
             var fixedUpdateService = Context.ImportService<IUpdateService<IFixedUpdatable>>();
@@ -76,9 +81,9 @@ namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Script
             cameraFollowService.Follow(_view.transform);
             controlledAgentService.Set(_controller);
 
-            var factory = Context.ImportService<IFeatureFactory>();
-            var weapon = factory.Add(this, "weapon",
-                (addr, parent) => new WeaponFeature(addr, parent));
+            // var factory = Context.ImportService<IFeatureFactory>();
+            // var weapon = factory.Add(this, "weapon",
+            //     (addr, parent) => new WeaponFeature(addr, parent));
         }
 
 

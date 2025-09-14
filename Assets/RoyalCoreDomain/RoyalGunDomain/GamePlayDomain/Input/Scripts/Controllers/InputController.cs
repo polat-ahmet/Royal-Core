@@ -66,7 +66,7 @@ namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Script
                 _model.InputVector = Vector2.zero;
             }
 
-            _commandFactory.CreateCommandVoid<InputChangedCommand>().SetData(new InputChangedCommandData(this))
+            _commandFactory.CreateAndResolveCommand<InputChangedCommand>().SetData(new InputChangedCommandData(this))
                 .Execute();
         }
     }
