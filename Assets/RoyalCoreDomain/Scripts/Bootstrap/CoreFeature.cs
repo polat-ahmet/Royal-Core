@@ -1,28 +1,35 @@
+using System.Threading;
+using System.Threading.Tasks;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context.Port;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature.Builder;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.ModelProvider;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.ViewProvider;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Feature;
+using RoyalCoreDomain.Scripts.Loading;
 using RoyalCoreDomain.Scripts.Services.Audio;
 using RoyalCoreDomain.Scripts.Services.CameraService;
 using RoyalCoreDomain.Scripts.Services.Logger;
+using RoyalCoreDomain.Scripts.Services.SceneService;
 using RoyalCoreDomain.Scripts.Services.UI;
 using RoyalCoreDomain.Scripts.Services.UpdateService;
+using UnityEngine;
 
 namespace RoyalCoreDomain.Scripts.Bootstrap
 {
     public sealed class CoreFeature : BaseFeature
     {
         private CoreView _view;
+        private CancellationTokenSource _ct;
 
-        public CoreFeature(string address) : base(address)
+        public CoreFeature(string address, CancellationTokenSource ct) : base(address)
         {
+            _ct = ct;
         }
 
         protected override void OnPreInstall()
         {
-            PlanChild("GamePlay", (addr, p) => new GamePlayFeature(addr, p));
+            // PlanChild("GamePlay", (addr, p) => new GamePlayFeature(addr, p));
         }
 
         protected override void OnInstall()
@@ -43,8 +50,9 @@ namespace RoyalCoreDomain.Scripts.Bootstrap
             Context.Services.Bind<IUpdateService<IFixedUpdatable>>(new UpdateService<IFixedUpdatable>());
             Context.Services.Bind<IUpdateService<ILateUpdatable>>(new UpdateService<ILateUpdatable>());
 
-            Context.Services.Bind<ILogger>(new UnityLogger());
+            var logger = new UnityLogger();
 
+            Context.Services.Bind<ISceneLoaderService>(new SceneLoaderService());
 
             // (optional) global port registry
             var portReg = new DynamicPortRegistry();
@@ -81,11 +89,26 @@ namespace RoyalCoreDomain.Scripts.Bootstrap
                 Context.ImportService<IUpdateService<IFixedUpdatable>>(),
                 Context.ImportService<IUpdateService<ILateUpdatable>>());
 
+            Context.ImportService<ISceneLoaderService>().InitEntryPoint();
+
+            
+            _ = InitEntryPoint(_ct);
+            
+
             // var cameraService = Context.ImportService<ICameraFollowService>();
             // lateUpdateService.RegisterUpdatable(cameraService);
 
             // var factory = Context.ImportService<IFeatureFactory>();
             // factory.Add(this, "GamePlay", (addr, p) => new GamePlayFeature(addr, p));
+        }
+        
+        private async Awaitable InitEntryPoint(CancellationTokenSource ct)
+        {
+            Context.ImportService<IUIService>().PushPopup<LoadingView>("Core/LoadingView");
+            var gameplay = await Context.ImportService<IFeatureFactory>().CreateAsync(this, "GamePlay", (addr, parent) => new GamePlayFeature(addr, parent), ct);
+            await Task.Delay(2000, ct.Token);
+            gameplay.Start();
+            Context.ImportService<IUIService>().PopPopup();
         }
 
         protected override void OnDispose()

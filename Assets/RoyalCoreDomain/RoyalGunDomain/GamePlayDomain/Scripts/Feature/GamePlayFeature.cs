@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Bullet;
 using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Enemy.Scripts.Services;
 using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Scripts.Services.ControlledAgentService;
@@ -12,16 +14,19 @@ using UnityEngine;
 
 namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Feature
 {
-    public class GamePlayFeature : BaseFeature
+    public class GamePlayFeature : SceneOwnerFeature
     {
+        protected override string SceneKey => "GamePlayScene";
+        private IFeatureFactory _factory;
+        
         public GamePlayFeature(string address, IFeature parent = null) : base(address, parent)
         {
         }
 
         protected override void OnPreInstall()
         {
-            PlanChild("Player", (addr, p) => new PlayerFeature(addr, p));
-            PlanChild("Input", (addr, p) => new InputFeature(addr, p));
+            // PlanChild("Player", (addr, p) => new PlayerFeature(addr, p));
+            // PlanChild("Input", (addr, p) => new InputFeature(addr, p));
         }
 
         protected override void OnInstall()
@@ -48,6 +53,25 @@ namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Script
             var spawner = new EnemySpawnerService(this, factory, reg, spawnerPositions);
             Context.Services.Bind(spawner);
         }
+        
+        protected override void OnResolve()
+        {
+            base.OnResolve();
+            _factory = Context.ImportService<IFeatureFactory>() ?? new FeatureFactory();
+        }
+        
+        protected override async Task OnSceneReadyAsync(CancellationTokenSource ct)
+        {
+            // LevelData/SpawnConfig gibi sahneye bağlı çocukları burada kur
+            // Örn: Player, EnemySpawner…
+            // PlanChild("Player", (addr, p) => new PlayerFeature(addr, p));
+            // PlanChild("Input", (addr, p) => new InputFeature(addr, p));
+            
+            await _factory.CreateAsync(this, "Player", (addr, parent) => new PlayerFeature(addr, parent), ct);
+            await _factory.CreateAsync(this, "Input", (addr, parent) => new InputFeature(addr, parent), ct);
+            
+            // Spawner & HUD vs.
+        }
 
         protected override void OnStart()
         {
@@ -55,6 +79,12 @@ namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Script
                 AudioPlayType.Loop);
             Context.ImportService<IUpdateService<IUpdatable>>()
                 .RegisterUpdatable(Context.ImportService<EnemySpawnerService>());
+        }
+
+        protected override void OnDispose()
+        {
+            Context.ImportService<IUpdateService<IUpdatable>>()
+                .UnregisterUpdatable(Context.ImportService<EnemySpawnerService>());
         }
     }
 }

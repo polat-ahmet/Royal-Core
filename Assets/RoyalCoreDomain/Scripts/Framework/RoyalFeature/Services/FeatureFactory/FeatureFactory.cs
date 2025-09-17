@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -14,26 +15,65 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature.Builder
         //     root.Start();
         // }
         //
-        public T AddDynamic<T>(IFeature parent, string name, Func<string, IFeature, T> create, string id = null)
+        public T Create<T>(IFeature parent, string name, Func<string, IFeature, T> create, string id = null)
             where T : IFeature
         {
             if (create == null) throw new ArgumentNullException(nameof(create));
             var address = FeatureAddress.ChildOf(parent?.Address, name, id);
             var child = create(address, parent);
-            child.Build();
-            Debug.Log("Feature Created");
+            // child.Build();
+            BuildSync(child);
+            
             return child;
         }
         
-        public async Task<T> AddAsync<T>(IFeature parent, string name, Func<string, IFeature, T> create,
+        public async Task<T> CreateAsync<T>(IFeature parent, string name, Func<string, IFeature, T> create, CancellationTokenSource ct,
             string id = null)
             where T : IFeature
         {
             Debug.Log("Feature Async Creating waiting");
-            // Yer: Addressables/asset preload vs. – şu an direkt sync çağırıyoruz
-            await Task.Delay(4000);
-            Debug.Log("Feature Creating");
-            return AddDynamic(parent, name, create, id);
+            if (create == null) throw new ArgumentNullException(nameof(create));
+            var address = FeatureAddress.ChildOf(parent?.Address, name, id);
+            var child = create(address, parent);
+            
+            await BuildAsync(child, ct);
+            
+            return child;
+        }
+        
+        public T CreateAndStart<T>(IFeature parent, string name, Func<string, IFeature, T> create, string id = null)
+            where T : IFeature
+        {
+           var child = Create(parent, name, create, id);
+           child.Start();
+            return child;
+        }
+        
+        public async Task<T> CreateAsyncAndStart<T>(IFeature parent, string name, Func<string, IFeature, T> create, CancellationTokenSource ct,
+            string id = null)
+            where T : IFeature
+        {
+            var child = await CreateAsync(parent, name, create, ct, id);
+            child.Start();
+            return child;
+        }
+        
+        public void BuildSync(IFeature root)
+        {
+            root.PreInstall();
+            root.Install();
+            root.Resolve();
+            // Warmup atlandı → tek frame kurulum
+            // root.Start();
+        }
+        
+        public async Task BuildAsync(IFeature root, CancellationTokenSource ct)
+        {
+            root.PreInstall();
+            root.Install();
+            root.Resolve();
+            await root.WarmupAsync(ct);
+            // root.Start();
         }
 
         public void Remove(IFeature feature)

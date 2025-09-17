@@ -23,7 +23,6 @@ namespace RoyalCoreDomain.Scripts.Services.UI
 
         public T Show<T>(string key, UILayer layer = UILayer.HUD) where T : Component, IView
         {
-            // ViewProvider doğrudan T döndürüyor
             var v = _views.LoadView<T>(key);
 
             // Tek Canvas altındaki ilgili layer paneline yerleştir
@@ -81,15 +80,19 @@ namespace RoyalCoreDomain.Scripts.Services.UI
         public void PopPopup()
         {
             if (_popupStack.Count == 0) return;
+            Debug.Log("Popping popup");
             var v = _popupStack.Pop();
             // tip paramı yok; en geniş Close çağrısı yeterli
             if (v is IView)
             {
+                Debug.Log("Popping popup view");
                 // generic Close<T> çağırmak için reflection’a gerek yok;
-                // doğrudan ViewProvider.Release yeterli:
-                _views.Release(v);
+                
                 // layer listelerinden de düş
                 foreach (var kv in _byLayer) kv.Value.Remove(v);
+                
+                // doğrudan ViewProvider.Release yeterli:
+                _views.Release(v.gameObject);
             }
         }
     }

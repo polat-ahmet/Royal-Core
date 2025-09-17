@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context;
 using UnityEngine;
 
@@ -28,13 +30,13 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature
         protected void PlanChild(string name, Func<string, IFeature, IFeature> factory)
             => _plannedChildren.Add((name, factory));
 
-        public void Build()
-        {
-            PreInstall();
-            Install();
-            Resolve();
-            Start();
-        }
+        // public void Build()
+        // {
+        //     PreInstall();
+        //     Install();
+        //     Resolve();
+        //     Start();
+        // }
         
         public void PreInstall()
         {
@@ -70,6 +72,12 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature
             State = FeatureState.Installed;
             
             foreach (var c in _children) c.Install();
+        }
+        
+        public async Task WarmupAsync(CancellationTokenSource ct)
+        {
+            await OnWarmupAsync(ct);
+            // State = FeatureState.Warmed;
         }
         
         public void Resolve()
@@ -168,8 +176,9 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature
         
         protected virtual void OnInstall()
         {
-            
         }
+        
+        protected virtual Task OnWarmupAsync(CancellationTokenSource ct) => Task.CompletedTask;
         
         protected virtual void OnResolve()
         {

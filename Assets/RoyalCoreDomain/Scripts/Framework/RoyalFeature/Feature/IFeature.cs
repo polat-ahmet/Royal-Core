@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context;
 
 namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature
@@ -13,9 +15,10 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature
         FeatureContext Context { get; }
 
         // lifecycle
-        void Build();
+        // void Build();
         void PreInstall();
         void Install();
+        Task WarmupAsync(CancellationTokenSource ct);
         void Resolve();
         void Start();
         void Pause();

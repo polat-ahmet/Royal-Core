@@ -42,9 +42,9 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Enemy.Scripts.Services
         private void SpawnEnemy()
         {
             if (_spawnPoints.Count == 0) return;
-            var p = _spawnPoints[Random.Range(0, _spawnPoints.Count)];
-            _factory.AddDynamic(_baseFeature, "Enemy" + _targetRegistry.All.Count,
-                (addr, parent) => new EnemyFeature(addr, parent, p));
+            var spawnPoints = _spawnPoints[Random.Range(0, _spawnPoints.Count)];
+            _factory.Create(_baseFeature, "Enemy" + _targetRegistry.All.Count,
+                (addr, parent) => new EnemyFeature(addr, parent, spawnPoints)).Start();
         }
     }
 }

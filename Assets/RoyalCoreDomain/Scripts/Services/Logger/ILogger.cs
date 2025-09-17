@@ -1,12 +1,14 @@
+using System;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services;
 
 namespace RoyalCoreDomain.Scripts.Services.Logger
 {
-    public interface ILogger : IService
+    public interface ILogger
     {
-        void Debug(string m);
-        void Info(string m);
-        void Warn(string m);
-        void Error(string m);
+        void Log(string message);
+        void LogWarning(string message);
+        void LogError(string message);
+        void LogException(Exception exception);
+        void LogTopic(string message, LogTopicType logTopicType = LogTopicType.Temp, string callerFilePath = "", string callerMemberName = "");
     }
 }

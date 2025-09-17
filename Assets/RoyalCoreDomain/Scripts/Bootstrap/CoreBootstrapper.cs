@@ -1,3 +1,5 @@
+using System;
+using System.Threading;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature;
 using UnityEngine;
 
@@ -21,12 +23,18 @@ namespace RoyalCoreDomain.Scripts.Bootstrap
             _initialized = true;
             DontDestroyOnLoad(gameObject);
 
-            _core = new CoreFeature("Core");
+            _core = new CoreFeature("Core", CancellationTokenSource.CreateLinkedTokenSource(Application.exitCancellationToken));
             _core.PreInstall();
             _core.Install();
             _core.Resolve();
-            _core.Start();
+           
+            // _core.Build();
             
+        }
+
+        private void Start()
+        {
+            _core.Start();
         }
 
         private void OnDestroy()

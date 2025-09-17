@@ -59,6 +59,8 @@ namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Script
 
         protected override void OnDispose()
         {
+            Context.ImportService<IUpdateService<IUpdatable>>().UnregisterUpdatable(_ctrl);
+            
             if (Context.TryImportService<IUIService>(out var uiService) && _view) uiService.Close(_view);
             _view = null;
         }

@@ -1,25 +1,51 @@
+using System;
+using System.IO;
+using RoyalCoreDomain.Scripts.Extensions;
+using UnityEngine;
+
 namespace RoyalCoreDomain.Scripts.Services.Logger
 {
-    public sealed class UnityLogger : ILogger
+    public class UnityLogger : LoggerBase
     {
-        public void Debug(string m)
+        private const string DebugTopicSuffix = ":: ";
+        private const string Dot = ".";
+        private const string StampFormat = "[{0}] ";
+        private const string TimeStampFormat = "HH:mm:ss:ff";
+
+        public override void Log(string message)
         {
-            UnityEngine.Debug.Log(m);
+            Debug.Log(GetTimeStamp() + message);
         }
 
-        public void Info(string m)
+        public override void LogWarning(string message)
         {
-            UnityEngine.Debug.Log($"<color=#8BC34A>[INFO]</color> {m}");
+            Debug.LogWarning(GetTimeStamp() + message);
         }
 
-        public void Warn(string m)
+        public override void LogError(string message)
         {
-            UnityEngine.Debug.LogWarning(m);
+            Debug.LogError(GetTimeStamp() + message);
         }
 
-        public void Error(string m)
+        public override void LogException(Exception exception)
         {
-            UnityEngine.Debug.LogError(m);
+            Debug.LogException(exception);
+        }
+
+        public override void LogTopic(string message, LogTopicType debugLogTopic = LogTopicType.Temp, string callerFilePath = "", string callerMemberName = "")
+        {
+            Debug.Log(debugLogTopic + DebugTopicSuffix + GetTimeStamp() + StampFormat.Format(GetCallerName(callerFilePath) + Dot + callerMemberName) + " " + message);
+        }
+
+        private string GetTimeStamp()
+        {
+            var timeStamp = DateTime.Now.ToString(TimeStampFormat);
+            return string.Format(StampFormat, timeStamp);
+        }
+
+        private string GetCallerName(string callerFilePath)
+        {
+            return Path.GetFileNameWithoutExtension(callerFilePath);
         }
     }
 }
