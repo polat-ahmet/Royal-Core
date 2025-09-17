@@ -74,12 +74,6 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature
             foreach (var c in _children) c.Install();
         }
         
-        public async Task WarmupAsync(CancellationTokenSource ct)
-        {
-            await OnWarmupAsync(ct);
-            // State = FeatureState.Warmed;
-        }
-        
         public void Resolve()
         {
             if(State != FeatureState.Installed) return;
@@ -88,6 +82,14 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature
             OnResolve();
             Debug.Log(Address + " Feature Resolved");
             State = FeatureState.Resolved;
+        }
+        
+        public async Task WarmupAsync(CancellationTokenSource ct)
+        {
+            Debug.Log(Address + " Feature Warming");
+            await OnWarmupAsync(ct);
+            Debug.Log(Address + " Feature Warmed up");
+            // State = FeatureState.Warmed;
         }
 
         public void Start()

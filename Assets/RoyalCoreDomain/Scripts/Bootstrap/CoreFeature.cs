@@ -1,5 +1,6 @@
 using System.Threading;
 using System.Threading.Tasks;
+using RoyalCoreDomain.RoyalGunDomain.Scripts.Feature;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context.Port;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature.Builder;
@@ -105,9 +106,9 @@ namespace RoyalCoreDomain.Scripts.Bootstrap
         private async Awaitable InitEntryPoint(CancellationTokenSource ct)
         {
             Context.ImportService<IUIService>().PushPopup<LoadingView>("Core/LoadingView");
-            var gameplay = await Context.ImportService<IFeatureFactory>().CreateAsync(this, "GamePlay", (addr, parent) => new GamePlayFeature(addr, parent), ct);
-            await Task.Delay(2000, ct.Token);
-            gameplay.Start();
+            var game = await Context.ImportService<IFeatureFactory>().CreateAsync(this, "Game",
+                (addr, parent) => new GameFeature(addr, parent), ct);
+            game.Start();
             Context.ImportService<IUIService>().PopPopup();
         }
 

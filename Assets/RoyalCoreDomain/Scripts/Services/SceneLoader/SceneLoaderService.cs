@@ -33,7 +33,7 @@ namespace RoyalCoreDomain.Scripts.Services.SceneService
                 LogService.LogError($"scene:{sceneName} is already Loading");
                 return false;
             }
-
+            
             await LoadScene(sceneName, cancellationTokenSource);
             return true;
         }

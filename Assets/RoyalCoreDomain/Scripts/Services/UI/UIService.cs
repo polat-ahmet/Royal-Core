@@ -24,7 +24,6 @@ namespace RoyalCoreDomain.Scripts.Services.UI
         public T Show<T>(string key, UILayer layer = UILayer.HUD) where T : Component, IView
         {
             var v = _views.LoadView<T>(key);
-
             // Tek Canvas altındaki ilgili layer paneline yerleştir
             var parent = _root.GetLayerRoot(layer);
             var rt = v.transform as RectTransform;
@@ -55,7 +54,7 @@ namespace RoyalCoreDomain.Scripts.Services.UI
                     break;
 
             // ViewProvider'a iade
-            _views.Release(view);
+            _views.Release(view.gameObject);
         }
 
         public void CloseAll(UILayer layer)
@@ -64,7 +63,7 @@ namespace RoyalCoreDomain.Scripts.Services.UI
             for (var i = list.Count - 1; i >= 0; --i)
             {
                 var c = list[i];
-                if (c) _views.Release(c);
+                if (c) _views.Release(c.gameObject);
             }
 
             list.Clear();

@@ -17,10 +17,13 @@ namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Script
     public class GamePlayFeature : SceneOwnerFeature
     {
         protected override string SceneKey => "GamePlayScene";
+        private readonly GamePlayArgs _args;
+        
         private IFeatureFactory _factory;
         
-        public GamePlayFeature(string address, IFeature parent = null) : base(address, parent)
+        public GamePlayFeature(string address, IFeature parent, GamePlayArgs args) : base(address, parent)
         {
+            _args = args;
         }
 
         protected override void OnPreInstall()
@@ -67,9 +70,10 @@ namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Script
             // PlanChild("Player", (addr, p) => new PlayerFeature(addr, p));
             // PlanChild("Input", (addr, p) => new InputFeature(addr, p));
             
+            Debug.Log("GamePlayFeature OnSceneReadyAsync called");
             await _factory.CreateAsync(this, "Player", (addr, parent) => new PlayerFeature(addr, parent), ct);
             await _factory.CreateAsync(this, "Input", (addr, parent) => new InputFeature(addr, parent), ct);
-            
+            Debug.Log("GamePlayFeature OnSceneReadyAsync finished");
             // Spawner & HUD vs.
         }
 
