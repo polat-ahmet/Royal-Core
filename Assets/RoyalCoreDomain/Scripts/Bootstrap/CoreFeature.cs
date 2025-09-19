@@ -106,9 +106,11 @@ namespace RoyalCoreDomain.Scripts.Bootstrap
         private async Awaitable InitEntryPoint(CancellationTokenSource ct)
         {
             Context.ImportService<IUIService>().PushPopup<LoadingView>("Core/LoadingView");
+
             var game = await Context.ImportService<IFeatureFactory>().CreateAsync(this, "Game",
                 (addr, parent) => new GameFeature(addr, parent), ct);
             game.Start();
+            
             Context.ImportService<IUIService>().PopPopup();
         }
 

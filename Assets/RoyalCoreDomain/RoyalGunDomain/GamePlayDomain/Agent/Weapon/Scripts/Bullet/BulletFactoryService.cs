@@ -1,20 +1,22 @@
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.ViewProvider;
+using RoyalCoreDomain.Scripts.Services.Pool;
 
 namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Bullet
 {
     public class BulletFactoryService : IBulletFactory
     {
-        private readonly IViewProvider _views; // pool destekliyorsa şahane
+        private readonly IPool<BulletView> _pool;
 
-        public BulletFactoryService(IViewProvider views)
+        public BulletFactoryService(IPool<BulletView> pool)
         {
-            _views = views;
+            _pool = pool;
         }
 
         public void SpawnBullet(in BulletSpawnInfo info)
         {
-            var bullet = _views.LoadView<BulletView>(info.BulletKey);
-            bullet.Fire(info);
+            // var bullet = _views.LoadView<BulletView>(info.BulletKey);
+            var bullet = _pool.Rent();
+            bullet.Fire(info, onHit: () => _pool.Return(bullet));
         }
     }
 }

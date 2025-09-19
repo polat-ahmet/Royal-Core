@@ -24,7 +24,7 @@ namespace RoyalCoreDomain.RoyalGunDomain.Scripts.Feature
 
         protected override void OnInstall()
         {
-            Context.Export<IGameNavPort>(this);
+            Context.Ports.Bind<IGameNavPort>(this);
         }
 
         protected override async Task OnSceneReadyAsync(CancellationTokenSource ct)
@@ -32,12 +32,7 @@ namespace RoyalCoreDomain.RoyalGunDomain.Scripts.Feature
             _ct = ct;
             await OpenLobbyAsync();
         }
-
-        protected override void OnStart()
-        {
-            Debug.Log("Game Feature OnStart");
-        }
-
+        
         public async Task OpenLobbyAsync()
         {
             var factory = Context.ImportService<IFeatureFactory>();
@@ -46,8 +41,6 @@ namespace RoyalCoreDomain.RoyalGunDomain.Scripts.Feature
                 
             _lobbyFeature = await factory.CreateAsync(this, "Lobby", 
                 (addr, parent) => new LobbyFeature(addr, parent), _ct);
-            
-            Debug.Log("GameFeature opened");
         }
 
         public async Task OpenGameplayAsync(GamePlayArgs args)
@@ -55,10 +48,7 @@ namespace RoyalCoreDomain.RoyalGunDomain.Scripts.Feature
             Context.ImportService<IUIService>().PushPopup<LoadingView>("Core/LoadingView");
             
             var factory = Context.ImportService<IFeatureFactory>();
-            
             factory.Remove(_lobbyFeature);
-            
-            Debug.Log("Gameplay opening");
             
            _gamePlayFeature = await Context.ImportService<IFeatureFactory>().CreateAsync(this, "GamePlay", 
                 (addr, parent) => new GamePlayFeature(addr, parent, new GamePlayArgs
@@ -66,7 +56,6 @@ namespace RoyalCoreDomain.RoyalGunDomain.Scripts.Feature
                     LevelIndex = 1
                 }), _ct);
            
-           Debug.Log("Gameplay opened");
            _gamePlayFeature.Start();
            
            Context.ImportService<IUIService>().PopPopup();
