@@ -1,7 +1,7 @@
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context.Port;
 using UnityEngine;
 
-namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Ports
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Ports
 {
     public interface ITargetable : IPort
     {

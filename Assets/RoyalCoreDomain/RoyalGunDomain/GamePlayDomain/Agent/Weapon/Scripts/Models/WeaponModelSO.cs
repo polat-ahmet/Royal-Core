@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Models
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Models
 {
     [CreateAssetMenu(menuName = "Game/Weapon/WeaponModel")]
     public sealed class WeaponModelSO : ScriptableObject

@@ -1,9 +1,12 @@
 using System;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Scripts.Modules.Health;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Scripts.Modules.Movement;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Scripts.Modules.SpriteRender;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Services;
 using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Enemy.Scripts.Ports;
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Animation;
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Health;
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Movement;
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.SpriteRender;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Player.Scripts.Models;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Player.Scripts.Views;
+using RoyalCoreDomain.Scripts.Animation.Animator;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.MVC.Controller;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Models;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Services;

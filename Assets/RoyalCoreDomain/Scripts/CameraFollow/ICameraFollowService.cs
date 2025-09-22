@@ -2,7 +2,7 @@ using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services;
 using Unity.Cinemachine;
 using UnityEngine;
 
-namespace RoyalCoreDomain.Scripts.Services.CameraService
+namespace RoyalCoreDomain.Scripts.CameraFollow
 {
     public interface ICameraFollowService : IService
     {

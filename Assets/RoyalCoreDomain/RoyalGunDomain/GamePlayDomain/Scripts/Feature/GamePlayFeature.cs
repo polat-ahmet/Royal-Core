@@ -2,19 +2,22 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Bullet;
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Enemy.Scripts.Feature;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Services;
 using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Enemy.Scripts.Services;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.Scripts.Feature;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Player.Scripts.Feature;
 using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Scripts.Services.ControlledAgentService;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature;
-using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature.Builder;
-using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.ViewProvider;
+using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.FeatureFactory;
+using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Feature;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Services;
 using RoyalCoreDomain.Scripts.Services.Audio;
 using RoyalCoreDomain.Scripts.Services.Pool;
+using RoyalCoreDomain.Scripts.Services.Providers.ViewProvider;
 using RoyalCoreDomain.Scripts.Services.UpdateService;
 using UnityEngine;
 
-namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Feature
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Scripts.Feature
 {
     public class GamePlayFeature : SceneOwnerFeature
     {

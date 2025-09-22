@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Animation
+namespace RoyalCoreDomain.Scripts.Animation.AnimationEvent
 {
     public abstract class BaseAnimationEventView : MonoBehaviour, IAnimationEventView
     {

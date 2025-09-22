@@ -1,9 +1,9 @@
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Movement;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Scripts.Modules.Movement;
 using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Scripts.Services.ControlledAgentService;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Command;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context;
 
-namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.RoyalFeatureTemplate.Scripts.Commands
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.Scripts.Commands
 {
     public class InputChangedCommand : BaseCommand, ICommandVoid
     {

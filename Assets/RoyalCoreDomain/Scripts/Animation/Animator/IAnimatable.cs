@@ -1,4 +1,4 @@
-namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Animation
+namespace RoyalCoreDomain.Scripts.Animation.Animator
 {
     public interface IAnimatable
     {

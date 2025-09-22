@@ -1,9 +1,11 @@
 using System.Threading;
 using System.Threading.Tasks;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Scripts.Feature;
 using RoyalCoreDomain.RoyalGunDomain.LobbyDomain.Scripts;
+using RoyalCoreDomain.RoyalGunDomain.LobbyDomain.Scripts.Feature;
 using RoyalCoreDomain.RoyalGunDomain.Scripts.Ports;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature;
-using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature.Builder;
+using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.FeatureFactory;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Feature;
 using RoyalCoreDomain.Scripts.Loading;
 using RoyalCoreDomain.Scripts.Services.UI;

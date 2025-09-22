@@ -1,13 +1,15 @@
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.RoyalFeatureTemplate.Scripts.Ports;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.Scripts.Controllers;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.Scripts.Models;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.Scripts.Ports;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.Scripts.Views;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature;
-using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.ModelProvider;
-using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Controllers;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Models;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Views;
+using RoyalCoreDomain.Scripts.Services.Providers.ModelProvider;
 using RoyalCoreDomain.Scripts.Services.UI;
 using RoyalCoreDomain.Scripts.Services.UpdateService;
 
-namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Feature
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.Scripts.Feature
 {
     public class InputFeature : BaseFeature
     {

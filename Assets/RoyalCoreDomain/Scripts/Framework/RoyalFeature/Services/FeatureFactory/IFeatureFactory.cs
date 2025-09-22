@@ -1,9 +1,9 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services;
+using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature;
 
-namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature.Builder
+namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.FeatureFactory
 {
     public interface IFeatureFactory : IService
     {

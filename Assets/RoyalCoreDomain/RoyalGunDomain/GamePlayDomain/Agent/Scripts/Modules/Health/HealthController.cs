@@ -1,7 +1,7 @@
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.MVC.Controller;
 using UnityEngine;
 
-namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Health
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Scripts.Modules.Health
 {
     public class HealthController : BaseController, IHittable
     {

@@ -1,7 +1,7 @@
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.MVC.View;
 using UnityEngine;
 
-namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Views
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.Scripts.Views
 {
     public interface IJoystickView : IView
     {

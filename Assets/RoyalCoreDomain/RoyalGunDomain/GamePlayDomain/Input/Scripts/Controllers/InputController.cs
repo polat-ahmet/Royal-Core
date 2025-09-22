@@ -1,5 +1,7 @@
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.RoyalFeatureTemplate.Scripts.Commands;
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.RoyalFeatureTemplate.Scripts.Ports;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.Scripts.Commands;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.Scripts.Models;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.Scripts.Ports;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.Scripts.Views;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Command;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.MVC.Controller;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Models;
@@ -7,7 +9,7 @@ using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Vi
 using RoyalCoreDomain.Scripts.Services.UpdateService;
 using UnityEngine;
 
-namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Controllers
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.Scripts.Controllers
 {
     public class InputController : BaseController, IUpdatable, IJoystickInputPort
     {
@@ -37,18 +39,18 @@ namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Script
 
         private void PollMouse()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (UnityEngine.Input.GetMouseButtonDown(0))
             {
                 _model.IsActive = true;
-                _anchor = Input.mousePosition;
+                _anchor = UnityEngine.Input.mousePosition;
                 _view.Outline.position = _anchor;
                 _view.Knob.position = _anchor;
                 _model.InputVector = Vector2.zero;
             }
 
-            else if (Input.GetMouseButton(0) && _model.IsActive)
+            else if (UnityEngine.Input.GetMouseButton(0) && _model.IsActive)
             {
-                var pos = (Vector2)Input.mousePosition;
+                var pos = (Vector2)UnityEngine.Input.mousePosition;
                 var delta = pos - _anchor;
 
                 var dead = _model.DeadZone * _model.RadiusPx;
@@ -60,7 +62,7 @@ namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Script
                 _model.InputVector = Vector2.ClampMagnitude(norm, 1f);
             }
 
-            else if (Input.GetMouseButtonUp(0) && _model.IsActive)
+            else if (UnityEngine.Input.GetMouseButtonUp(0) && _model.IsActive)
             {
                 _model.IsActive = false;
                 _model.InputVector = Vector2.zero;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Views
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.Scripts.Views
 {
     public class JoystickView : MonoBehaviour, IJoystickView
     {

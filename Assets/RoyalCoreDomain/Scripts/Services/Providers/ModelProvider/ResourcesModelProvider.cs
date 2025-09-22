@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.ModelProvider
+namespace RoyalCoreDomain.Scripts.Services.Providers.ModelProvider
 {
     public class ResourcesModelProvider : IModelProvider
     {

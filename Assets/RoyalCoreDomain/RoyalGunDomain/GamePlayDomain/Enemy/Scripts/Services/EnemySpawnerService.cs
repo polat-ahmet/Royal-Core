@@ -1,8 +1,9 @@
 using System.Collections.Generic;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Services;
 using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Enemy.Scripts.Feature;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature;
-using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature.Builder;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services;
+using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.FeatureFactory;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Services;
 using RoyalCoreDomain.Scripts.Services.UpdateService;
 using UnityEngine;

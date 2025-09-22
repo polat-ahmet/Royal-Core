@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context
+namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context.Locator
 {
     // Tip başına tek binding
     public interface ILocator<TBase> where TBase : class

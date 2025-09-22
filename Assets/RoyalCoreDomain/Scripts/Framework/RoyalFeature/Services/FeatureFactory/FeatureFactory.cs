@@ -1,9 +1,10 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature;
 using UnityEngine;
 
-namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature.Builder
+namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.FeatureFactory
 {
     public sealed class FeatureFactory : IFeatureFactory
     {

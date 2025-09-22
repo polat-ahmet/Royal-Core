@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services;
+using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature;
 
-namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature
+namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.FeatureRegistry
 {
     public interface IFeatureRegistry : IService
     {

@@ -4,7 +4,7 @@ using RoyalCoreDomain.Scripts.Services.Logger;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace RoyalCoreDomain.Scripts.Services.SceneService
+namespace RoyalCoreDomain.Scripts.Services.SceneLoader
 {
     public class SceneLoaderService : ISceneLoaderService
     {

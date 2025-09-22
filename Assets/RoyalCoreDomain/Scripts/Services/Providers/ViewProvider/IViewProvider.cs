@@ -1,7 +1,8 @@
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.MVC.View;
+using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services;
 using UnityEngine;
 
-namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.ViewProvider
+namespace RoyalCoreDomain.Scripts.Services.Providers.ViewProvider
 {
     public interface IViewProvider : IService
     {

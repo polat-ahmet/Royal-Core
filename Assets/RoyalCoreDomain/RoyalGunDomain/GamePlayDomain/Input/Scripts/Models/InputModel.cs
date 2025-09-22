@@ -1,7 +1,7 @@
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.MVC.Model;
 using UnityEngine;
 
-namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Models
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.Scripts.Models
 {
     public class InputModel : BaseModel
     {

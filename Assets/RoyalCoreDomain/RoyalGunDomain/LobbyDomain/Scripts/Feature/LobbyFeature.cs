@@ -1,14 +1,13 @@
 using System.Threading;
 using System.Threading.Tasks;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Scripts.Feature;
 using RoyalCoreDomain.RoyalGunDomain.LobbyDomain.Scripts.View;
 using RoyalCoreDomain.RoyalGunDomain.Scripts.Ports;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature;
-using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.ViewProvider;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Feature;
 using RoyalCoreDomain.Scripts.Services.UI;
-using UnityEngine;
 
-namespace RoyalCoreDomain.RoyalGunDomain.LobbyDomain.Scripts
+namespace RoyalCoreDomain.RoyalGunDomain.LobbyDomain.Scripts.Feature
 {
     public class LobbyFeature : SceneOwnerFeature
     {

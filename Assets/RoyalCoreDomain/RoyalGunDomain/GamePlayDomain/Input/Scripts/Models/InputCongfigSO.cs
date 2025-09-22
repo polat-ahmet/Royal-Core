@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Models
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.Scripts.Models
 {
     [CreateAssetMenu(fileName = "InputModel", menuName = "Game/Config/InputModel", order = 0)]
     public class InputCongfigSO : ScriptableObject

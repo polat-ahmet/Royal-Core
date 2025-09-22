@@ -1,9 +1,12 @@
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Animation;
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Health;
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Movement;
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.SpriteRender;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Scripts.Modules.Health;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Scripts.Modules.Movement;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Scripts.Modules.SpriteRender;
 using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Player.Scripts.Commands;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Player.Scripts.Models;
 using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Player.Scripts.Ports;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Player.Scripts.Views;
+using RoyalCoreDomain.Scripts.Animation.AnimationEvent;
+using RoyalCoreDomain.Scripts.Animation.Animator;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Command;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.MVC.Controller;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Models;
@@ -11,7 +14,7 @@ using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Vi
 using RoyalCoreDomain.Scripts.Services.UpdateService;
 using UnityEngine;
 
-namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Controllers
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Player.Scripts.Controllers
 {
     public class PlayerController : BaseController, IPlayerPort
     {

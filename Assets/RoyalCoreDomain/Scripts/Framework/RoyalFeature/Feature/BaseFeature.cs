@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context;
+using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.FeatureRegistry;
 using UnityEngine;
 
 namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature

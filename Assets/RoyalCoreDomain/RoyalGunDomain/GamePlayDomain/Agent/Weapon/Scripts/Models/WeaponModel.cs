@@ -1,7 +1,8 @@
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.MVC.Model;
+using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Models;
 using UnityEngine;
 
-namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Models
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Models
 {
     public class WeaponModel : BaseModel
     {

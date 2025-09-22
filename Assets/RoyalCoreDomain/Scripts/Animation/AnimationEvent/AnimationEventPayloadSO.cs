@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Animation
+namespace RoyalCoreDomain.Scripts.Animation.AnimationEvent
 {
     [CreateAssetMenu(fileName = "AnimationEventPayload", menuName = "Royal Core/Animation Event/AnimationEventPayload",
         order = 0)]

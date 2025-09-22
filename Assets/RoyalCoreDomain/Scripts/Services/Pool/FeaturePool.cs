@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature;
-using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature.Builder;
+using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.FeatureFactory;
 
 namespace RoyalCoreDomain.Scripts.Services.Pool
 {

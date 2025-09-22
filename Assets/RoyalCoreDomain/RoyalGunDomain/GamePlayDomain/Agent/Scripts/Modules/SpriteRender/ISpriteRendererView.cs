@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.SpriteRender
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Scripts.Modules.SpriteRender
 {
     public interface ISpriteRendererView
     {

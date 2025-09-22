@@ -1,6 +1,6 @@
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context.Port;
 
-namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Health
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Scripts.Modules.Health
 {
     public interface IHittable : IPort
     {

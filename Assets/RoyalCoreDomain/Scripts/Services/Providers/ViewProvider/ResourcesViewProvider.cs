@@ -3,7 +3,7 @@ using RoyalCoreDomain.Scripts.Framework.RoyalFeature.MVC.View;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.ViewProvider
+namespace RoyalCoreDomain.Scripts.Services.Providers.ViewProvider
 {
     public sealed class ResourcesViewProvider : IViewProvider
     {

@@ -1,6 +1,6 @@
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services;
 
-namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Services
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.Scripts.Services
 {
     public class InputService : IService
     {

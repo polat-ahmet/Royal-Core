@@ -1,6 +1,6 @@
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services;
 
-namespace RoyalCoreDomain.Scripts.Services.UpdateService
+namespace RoyalCoreDomain.Scripts.Services.TimeService
 {
     public interface ITimeService : IService
     {

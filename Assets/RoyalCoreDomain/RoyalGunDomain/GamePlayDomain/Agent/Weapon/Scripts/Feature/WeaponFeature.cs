@@ -1,13 +1,17 @@
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Controllers;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Models;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Ports;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Views;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.WeaponHolder;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature;
-using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.ModelProvider;
-using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.ViewProvider;
-using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Controllers;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Models;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Ports;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Views;
+using RoyalCoreDomain.Scripts.Services.Providers.ModelProvider;
+using RoyalCoreDomain.Scripts.Services.Providers.ViewProvider;
 using RoyalCoreDomain.Scripts.Services.UpdateService;
 
-namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Feature
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Feature
 {
     public class WeaponFeature : BaseFeature
     {

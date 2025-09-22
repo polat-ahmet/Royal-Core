@@ -1,6 +1,7 @@
+using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services;
 using UnityEngine;
 
-namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.ModelProvider
+namespace RoyalCoreDomain.Scripts.Services.Providers.ModelProvider
 {
     public interface IModelProvider : IService
     {

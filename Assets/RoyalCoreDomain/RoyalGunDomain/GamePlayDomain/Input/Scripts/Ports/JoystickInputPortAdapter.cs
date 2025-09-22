@@ -1,7 +1,7 @@
-using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Models;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.Scripts.Models;
 using UnityEngine;
 
-namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.RoyalFeatureTemplate.Scripts.Ports
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.Scripts.Ports
 {
     public class JoystickInputPortAdapter : IJoystickInputPort
     {

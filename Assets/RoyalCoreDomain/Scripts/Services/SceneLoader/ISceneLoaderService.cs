@@ -2,7 +2,7 @@
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services;
 using UnityEngine;
 
-namespace RoyalCoreDomain.Scripts.Services.SceneService
+namespace RoyalCoreDomain.Scripts.Services.SceneLoader
 {
     public interface ISceneLoaderService : IService
     {

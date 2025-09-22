@@ -1,4 +1,4 @@
-namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Health
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Scripts.Modules.Health
 {
     public interface IHealthData
     {

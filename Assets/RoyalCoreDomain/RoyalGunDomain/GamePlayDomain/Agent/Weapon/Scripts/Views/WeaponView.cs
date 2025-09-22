@@ -1,7 +1,7 @@
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.MVC.View;
 using UnityEngine;
 
-namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Views
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Views
 {
     public class WeaponView : MonoBehaviour, IView
     {

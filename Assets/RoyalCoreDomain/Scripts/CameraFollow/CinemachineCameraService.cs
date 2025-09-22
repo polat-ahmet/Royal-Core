@@ -1,7 +1,7 @@
 using Unity.Cinemachine;
 using UnityEngine;
 
-namespace RoyalCoreDomain.Scripts.Services.CameraService
+namespace RoyalCoreDomain.Scripts.CameraFollow
 {
     public class CinemachineCameraService : ICameraFollowService
     {

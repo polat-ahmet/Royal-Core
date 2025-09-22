@@ -1,20 +1,24 @@
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Animation;
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Health;
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Movement;
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.SpriteRender;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Scripts.Modules.Health;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Scripts.Modules.Movement;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Scripts.Modules.SpriteRender;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Feature;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.WeaponHolder;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Player.Scripts.Controllers;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Player.Scripts.Models;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Player.Scripts.Views;
 using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Scripts.Services.ControlledAgentService;
+using RoyalCoreDomain.Scripts.Animation.Animator;
+using RoyalCoreDomain.Scripts.CameraFollow;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature;
-using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature.Builder;
-using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.ModelProvider;
-using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.ViewProvider;
-using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Controllers;
+using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Feature;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Models;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Ports;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Views;
-using RoyalCoreDomain.Scripts.Services.CameraService;
+using RoyalCoreDomain.Scripts.Services.Providers.ModelProvider;
+using RoyalCoreDomain.Scripts.Services.Providers.ViewProvider;
 using RoyalCoreDomain.Scripts.Services.UpdateService;
 
-namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Feature
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Player.Scripts.Feature
 {
     public class PlayerFeature : BaseFeature
     {

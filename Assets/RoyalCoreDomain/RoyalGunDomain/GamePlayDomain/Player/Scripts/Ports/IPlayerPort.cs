@@ -1,5 +1,6 @@
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Health;
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Movement;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Scripts.Modules.Health;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Scripts.Modules.Movement;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.WeaponHolder;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Ports;
 using UnityEngine;
 

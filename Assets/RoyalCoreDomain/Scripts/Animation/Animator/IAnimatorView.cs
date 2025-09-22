@@ -1,9 +1,7 @@
-using UnityEngine;
-
-namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Animation
+namespace RoyalCoreDomain.Scripts.Animation.Animator
 {
     public interface IAnimatorView
     {
-        Animator Animator { get; }
+        UnityEngine.Animator Animator { get; }
     }
 }

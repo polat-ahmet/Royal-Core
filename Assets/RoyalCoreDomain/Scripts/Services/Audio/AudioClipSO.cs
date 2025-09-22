@@ -1,4 +1,4 @@
-using CoreDomain.Scripts.Helpers.SerializableDictionary;
+using RoyalCoreDomain.Scripts.Utilities.Helpers.SerializableDictionary;
 using UnityEngine;
 
 namespace RoyalCoreDomain.Scripts.Services.Audio

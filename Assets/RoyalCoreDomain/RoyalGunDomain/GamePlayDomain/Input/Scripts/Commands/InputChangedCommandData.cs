@@ -1,6 +1,6 @@
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.RoyalFeatureTemplate.Scripts.Ports;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.Scripts.Ports;
 
-namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.RoyalFeatureTemplate.Scripts.Commands
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.Scripts.Commands
 {
     public class InputChangedCommandData
     {

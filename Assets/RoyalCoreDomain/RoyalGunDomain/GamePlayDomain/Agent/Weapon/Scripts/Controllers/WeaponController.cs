@@ -1,18 +1,23 @@
 using System.Collections;
 using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Bullet;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Models;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Ports;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Services;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Views;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.WeaponHolder;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.MVC.Controller;
-using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.ViewProvider;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Models;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Ports;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Services;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Views;
 using RoyalCoreDomain.Scripts.Services.Audio;
+using RoyalCoreDomain.Scripts.Services.Providers.ViewProvider;
 using RoyalCoreDomain.Scripts.Services.UpdateService;
 using UnityEngine;
 using Random = System.Random;
 
-namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Controllers
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Controllers
 {
     public class WeaponController : BaseController, IUpdatable, IWeaponPort
     {

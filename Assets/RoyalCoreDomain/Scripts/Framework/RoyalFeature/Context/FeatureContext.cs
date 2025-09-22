@@ -1,5 +1,6 @@
 using System;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Command;
+using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context.Locator;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context.Port;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.MVC.Controller;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.MVC.Model;

@@ -1,3 +1,4 @@
+using RoyalCoreDomain.Scripts.Services.TimeService;
 using UnityEngine;
 
 namespace RoyalCoreDomain.Scripts.Services.UpdateService

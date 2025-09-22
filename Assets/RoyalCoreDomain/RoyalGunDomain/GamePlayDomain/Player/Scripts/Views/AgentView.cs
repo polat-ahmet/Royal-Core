@@ -1,12 +1,15 @@
 using System;
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Animation;
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Health;
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Movement;
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.SpriteRender;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Scripts.Modules.Health;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Scripts.Modules.Movement;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Scripts.Modules.SpriteRender;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.WeaponHolder;
+using RoyalCoreDomain.Scripts.Animation.AnimationEvent;
+using RoyalCoreDomain.Scripts.Animation.Animator;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.MVC.View;
+using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Views;
 using UnityEngine;
 
-namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Views
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Player.Scripts.Views
 {
     public sealed class AgentView : MonoBehaviour, IView, IMovementView, IAnimatorView, ISpriteRendererView,
         IAnimationEventView, IWeaponHolderView, IHittableViewBridge

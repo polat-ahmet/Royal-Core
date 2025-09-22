@@ -1,4 +1,4 @@
-namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Feature
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Scripts.Feature
 {
     public struct GamePlayArgs
     {

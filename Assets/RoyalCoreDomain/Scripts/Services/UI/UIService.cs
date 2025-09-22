@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.MVC.View;
-using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.ViewProvider;
+using RoyalCoreDomain.Scripts.Services.Providers.ViewProvider;
 using UnityEngine;
 
 namespace RoyalCoreDomain.Scripts.Services.UI

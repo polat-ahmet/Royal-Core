@@ -3,7 +3,7 @@ using RoyalCoreDomain.Scripts.Framework.RoyalFeature.MVC.Controller;
 using RoyalCoreDomain.Scripts.Services.UpdateService;
 using UnityEngine;
 
-namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Movement
+namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Scripts.Modules.Movement
 {
     public class MovementController : BaseController, IFixedUpdatable, IMovable
     {

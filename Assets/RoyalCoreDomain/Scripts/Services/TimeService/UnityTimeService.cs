@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RoyalCoreDomain.Scripts.Services.UpdateService
+namespace RoyalCoreDomain.Scripts.Services.TimeService
 {
     public sealed class UnityTimeService : ITimeService
     {

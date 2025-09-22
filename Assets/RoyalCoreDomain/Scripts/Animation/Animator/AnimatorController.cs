@@ -1,6 +1,6 @@
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.MVC.Controller;
 
-namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Animation
+namespace RoyalCoreDomain.Scripts.Animation.Animator
 {
     public class AnimatorController : BaseController, IAnimatable
     {

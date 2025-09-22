@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context
+namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context.Locator
 {
     public sealed class Locator<TBase> : ILocator<TBase> where TBase : class
     {

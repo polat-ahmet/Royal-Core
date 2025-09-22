@@ -1,6 +1,6 @@
 using System.Threading;
 using System.Threading.Tasks;
-using RoyalCoreDomain.Scripts.Services.SceneService;
+using RoyalCoreDomain.Scripts.Services.SceneLoader;
 
 namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature
 {

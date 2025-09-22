@@ -1,5 +1,5 @@
 using System;
-using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Health;
+using RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Scripts.Modules.Health;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.MVC.View;
 using RoyalCoreDomain.Scripts.Services.Pool;
 using UnityEngine;

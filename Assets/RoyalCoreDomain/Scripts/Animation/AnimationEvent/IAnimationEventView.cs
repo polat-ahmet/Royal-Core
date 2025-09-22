@@ -1,6 +1,6 @@
 using System;
 
-namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Modules.Animation
+namespace RoyalCoreDomain.Scripts.Animation.AnimationEvent
 {
     public interface IAnimationEventView
     {
