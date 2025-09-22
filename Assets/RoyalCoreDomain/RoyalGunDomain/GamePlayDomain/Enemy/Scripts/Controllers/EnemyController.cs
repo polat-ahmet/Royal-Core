@@ -8,6 +8,7 @@ using RoyalCoreDomain.Scripts.Framework.RoyalFeature.MVC.Controller;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Models;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Services;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Views;
+using RoyalCoreDomain.Scripts.Services.Audio;
 using RoyalCoreDomain.Scripts.Services.UpdateService;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -29,12 +30,14 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Enemy.Scripts.Controller
 
         private readonly Transform _target;
         private readonly AgentView _view;
+        
+        private readonly IAudioService _audioService;
 
         private Action OnEnemyDied{ get; set; }
 
         public EnemyController(AgentModel model, AgentView view, IAnimatable animationController,
             IHittable healthController, IMovable movementController, IRenderController rendererController,
-            Transform target, ITargetRegistry registry, IUpdateService<IFixedUpdatable> fixedUpdateService)
+            Transform target, ITargetRegistry registry, IUpdateService<IFixedUpdatable> fixedUpdateService, IAudioService audioService)
         {
             _model = model;
             _view = view;
@@ -45,6 +48,7 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Enemy.Scripts.Controller
             _target = target;
             _registry = registry;
             _fixedUpdateService = fixedUpdateService;
+            _audioService = audioService;
 
             _view.BindTarget(this);
 
@@ -85,6 +89,7 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Enemy.Scripts.Controller
         private void OnDie()
         {
             Debug.Log("Enemy Controller Die");
+            _audioService.PlayAudio(AudioClipType.EnemyDeath, AudioChannelType.Fx);
             OnEnemyDied?.Invoke();
             
             // animasyon, sfx, loot vs…

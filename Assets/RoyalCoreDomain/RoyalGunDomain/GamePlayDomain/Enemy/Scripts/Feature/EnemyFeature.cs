@@ -11,6 +11,7 @@ using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.ViewProvider;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Models;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Services;
 using RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Scripts.Views;
+using RoyalCoreDomain.Scripts.Services.Audio;
 using RoyalCoreDomain.Scripts.Services.Pool;
 using RoyalCoreDomain.Scripts.Services.UpdateService;
 using UnityEngine;
@@ -56,7 +57,8 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Enemy.Scripts.Feature
 
             _controller = new EnemyController(_model, _view, animation, health, movement, render,
                 Context.ImportService<IControlledAgentService>().TryGetTransform(),
-                Context.ImportService<ITargetRegistry>(), Context.ImportService<IUpdateService<IFixedUpdatable>>());
+                Context.ImportService<ITargetRegistry>(), Context.ImportService<IUpdateService<IFixedUpdatable>>(),
+                Context.ImportService<IAudioService>());
             _controller.SetupCallbacks(OnEnemyDied);
             Context.Controllers.Bind(_controller);
         }

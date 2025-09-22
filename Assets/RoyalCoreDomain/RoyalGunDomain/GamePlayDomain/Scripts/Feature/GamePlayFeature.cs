@@ -95,7 +95,7 @@ namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Script
 
         protected override void OnStart()
         {
-            Context.ImportService<IAudioService>().PlayAudio(AudioClipType.GamePlayBGMusic, AudioChannelType.Music,
+            Context.ImportService<IAudioService>().PlayAudio(AudioClipType.GamePlayBgMusic, AudioChannelType.Music,
                 AudioPlayType.Loop);
             Context.ImportService<IUpdateService<IUpdatable>>()
                 .RegisterUpdatable(Context.ImportService<EnemySpawnerService>());

@@ -15,7 +15,7 @@ namespace RoyalCoreDomain.Scripts.Services.Pool
     private readonly Transform _holder;         // pool objelerinin saklanacağı parent
     private readonly PoolConfig _cfg;
     private readonly IViewProvider _views;
-    private readonly Stack<TView> _stack = new(64);
+    private readonly Stack<TView> _stack = new();
     private int _created;
 
     public ViewPool(IViewProvider vp, string viewKey, Transform holder, PoolConfig cfg = null)

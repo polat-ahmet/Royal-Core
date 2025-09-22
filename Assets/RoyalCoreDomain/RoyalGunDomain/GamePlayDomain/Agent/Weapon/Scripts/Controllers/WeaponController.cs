@@ -83,8 +83,7 @@ namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Script
         {
             if (_m.IsReloading || _m.AmmoInMag == _m.MagSize) return;
             _v.StartCoroutine(ReloadRoutine());
-            // if (_audio != null && !string.IsNullOrEmpty(_m.ReloadSfx))
-            //     _audio.PlaySfx(new AudioKey(_m.ReloadSfx));
+            _audio.PlayAudio(AudioClipType.Reload, AudioChannelType.Fx);
         }
 
         private void AutoAcquireAndAim(float dt)
@@ -152,6 +151,8 @@ namespace RoyalCoreDomain.Scripts.Framework.Template.RoyalFeatureTemplate.Script
             _proj.SpawnBullet(new BulletSpawnInfo(
                 pos, dir, _m.BulletSpeed, dmg, _m.BulletLife, _m.BulletKey
             ));
+            
+            _audio.PlayAudio(AudioClipType.Shoot, AudioChannelType.Fx);
 
             if (_views != null && !string.IsNullOrEmpty(_m.MuzzleFxKey))
             {
