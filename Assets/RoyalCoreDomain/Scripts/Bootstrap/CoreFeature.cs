@@ -1,6 +1,6 @@
 using System.Threading;
 using System.Threading.Tasks;
-using RoyalCoreDomain.RoyalGunDomain.Scripts.Feature;
+using RoyalCoreDomain.RoyalGameDomain.Scripts.Feature;
 using RoyalCoreDomain.Scripts.CameraFollow;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context.Port;
 using RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature;
