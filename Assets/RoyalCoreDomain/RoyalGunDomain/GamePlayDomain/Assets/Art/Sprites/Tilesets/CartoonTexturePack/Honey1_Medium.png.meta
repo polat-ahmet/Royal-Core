@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Honey1_Medium_0: 9070939374587468397
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

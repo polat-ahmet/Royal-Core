@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      8_natural-decor(moss_tiles_BW)17_0: 3695657123259578694
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

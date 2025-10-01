@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Monster2-Walk_19_0: -3060095225242990302
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

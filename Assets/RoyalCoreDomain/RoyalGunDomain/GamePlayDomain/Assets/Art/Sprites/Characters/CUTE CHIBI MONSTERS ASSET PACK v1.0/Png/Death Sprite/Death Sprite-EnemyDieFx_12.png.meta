@@ -372,7 +372,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Death Sprite-EnemyDieFx_12_0: 7259687351180547209
+      Death Sprite-EnemyDieFx_12_1: 8218438419419406023
+      Death Sprite-EnemyDieFx_12_2: 3839911897708407057
+      Death Sprite-EnemyDieFx_12_3: 6645744900490411632
+      Death Sprite-EnemyDieFx_12_4: 2420896667805914461
+      Death Sprite-EnemyDieFx_12_5: 2325801736475123246
+      Death Sprite-EnemyDieFx_12_6: 1071586791720629591
+      Death Sprite-EnemyDieFx_12_7: 8388484078080055342
+      Death Sprite-EnemyDieFx_12_8: -7002575029817555090
+      Death Sprite-EnemyDieFx_12_9: -8850644104759435185
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

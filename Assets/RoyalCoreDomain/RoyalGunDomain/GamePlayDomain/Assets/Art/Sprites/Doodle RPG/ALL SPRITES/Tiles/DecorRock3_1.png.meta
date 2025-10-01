@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DecorRock3_1_0: 4557890185966086176
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

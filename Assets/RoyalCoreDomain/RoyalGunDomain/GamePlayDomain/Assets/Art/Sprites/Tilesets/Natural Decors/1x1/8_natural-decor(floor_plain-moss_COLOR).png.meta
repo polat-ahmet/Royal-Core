@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      8_natural-decor(floor_plain-moss_COLOR)_0: 1370132750047144142
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      seedbag-tomato_0: 3406040138180595473
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

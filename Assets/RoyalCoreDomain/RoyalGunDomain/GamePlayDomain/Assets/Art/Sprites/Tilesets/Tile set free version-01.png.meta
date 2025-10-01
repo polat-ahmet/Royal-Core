@@ -747,7 +747,32 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Tile set free version-01_0: 864316277858351852
+      Tile set free version-01_1: 8506668178697128305
+      Tile set free version-01_10: -2919529697223212795
+      Tile set free version-01_11: 9158632299303915060
+      Tile set free version-01_12: 1936303578843086363
+      Tile set free version-01_13: -3901894654610322020
+      Tile set free version-01_14: 2935360941262088157
+      Tile set free version-01_15: -113196555200675940
+      Tile set free version-01_16: 2931924630549324242
+      Tile set free version-01_17: 8453378478626241245
+      Tile set free version-01_18: -2575694826403671180
+      Tile set free version-01_19: 8669816624762352761
+      Tile set free version-01_2: -4737521277083063809
+      Tile set free version-01_20: -2848812594531970128
+      Tile set free version-01_21: 636714925439776962
+      Tile set free version-01_22: 3510470945872580290
+      Tile set free version-01_23: -7205608075788399725
+      Tile set free version-01_24: 8809229548282862209
+      Tile set free version-01_3: 7179426423847265636
+      Tile set free version-01_4: -3539624437098723575
+      Tile set free version-01_5: -8504882183696798517
+      Tile set free version-01_6: 2312813280400413431
+      Tile set free version-01_7: -6180655999738450665
+      Tile set free version-01_8: -8813259960064984979
+      Tile set free version-01_9: -4393541911766513904
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

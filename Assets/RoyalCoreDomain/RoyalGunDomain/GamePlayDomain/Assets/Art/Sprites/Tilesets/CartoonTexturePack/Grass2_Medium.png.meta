@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Grass2_Medium_0: -6487619704513108173
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

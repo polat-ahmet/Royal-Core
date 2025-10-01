@@ -297,7 +297,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      8_natural-decor(decor_leaf1_BW)3_0: 9134960906773684539
+      8_natural-decor(decor_leaf1_BW)3_1: -1140886439579503171
+      8_natural-decor(decor_leaf1_BW)3_2: 8720059244900073634
+      8_natural-decor(decor_leaf1_BW)3_3: 9147973270529934244
+      8_natural-decor(decor_leaf1_BW)3_4: -324268352551709947
+      8_natural-decor(decor_leaf1_BW)3_5: -1419933596881498489
+      8_natural-decor(decor_leaf1_BW)3_6: -1145882468100694503
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

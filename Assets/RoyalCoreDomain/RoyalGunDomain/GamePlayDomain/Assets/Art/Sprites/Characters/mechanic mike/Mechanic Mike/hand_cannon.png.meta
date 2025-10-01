@@ -497,7 +497,22 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      hand_cannon_0: 9207103881994311833
+      hand_cannon_1: -820206810679889947
+      hand_cannon_10: 6837328405263848837
+      hand_cannon_11: 7125236457321500389
+      hand_cannon_12: -6093914315261415717
+      hand_cannon_13: -2924183246390963919
+      hand_cannon_14: -559981585815320124
+      hand_cannon_2: 707227408675800351
+      hand_cannon_3: -2447269535142482149
+      hand_cannon_4: 2498913746842631584
+      hand_cannon_5: 1877793348555492076
+      hand_cannon_6: -362599072103336716
+      hand_cannon_7: -1971523776196072262
+      hand_cannon_8: 8811254115625833060
+      hand_cannon_9: -9006179885441308264
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

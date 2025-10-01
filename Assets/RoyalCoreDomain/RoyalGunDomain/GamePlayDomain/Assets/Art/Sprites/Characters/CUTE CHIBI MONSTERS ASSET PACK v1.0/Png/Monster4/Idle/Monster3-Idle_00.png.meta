@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Monster3-Idle_00_0: 7519390296686075176
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

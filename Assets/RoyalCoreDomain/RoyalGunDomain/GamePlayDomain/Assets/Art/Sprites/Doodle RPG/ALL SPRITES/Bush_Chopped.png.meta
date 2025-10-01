@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bush_Chopped_0: 5774858613342293898
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

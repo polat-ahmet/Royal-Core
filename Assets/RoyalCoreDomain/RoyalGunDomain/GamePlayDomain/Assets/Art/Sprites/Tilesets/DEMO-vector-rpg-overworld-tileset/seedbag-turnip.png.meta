@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      seedbag-turnip_0: 6713605231631204355
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

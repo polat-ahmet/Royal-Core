@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      power_pill_example_17_0: -5170129185383675637
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -522,7 +522,23 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DeadFx_08_0: -6959932359089930739
+      DeadFx_08_1: 8468577226094196044
+      DeadFx_08_10: -1220690620514668146
+      DeadFx_08_11: -1689344301387812921
+      DeadFx_08_12: 568007663665703087
+      DeadFx_08_13: -613874447093957057
+      DeadFx_08_14: 900448726809137932
+      DeadFx_08_15: 4709021565421885542
+      DeadFx_08_2: -1169896911877820818
+      DeadFx_08_3: -8905169673925849693
+      DeadFx_08_4: -6057406907739406069
+      DeadFx_08_5: 6543273588181263006
+      DeadFx_08_6: 1971681358339911969
+      DeadFx_08_7: 5015611744580613121
+      DeadFx_08_8: -8002533642331559494
+      DeadFx_08_9: -2275805690445020374
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Glimmer5_0: 7419257621926056895
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

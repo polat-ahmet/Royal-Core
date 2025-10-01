@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dirt3_GreyDark_0: 2262300864757441318
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

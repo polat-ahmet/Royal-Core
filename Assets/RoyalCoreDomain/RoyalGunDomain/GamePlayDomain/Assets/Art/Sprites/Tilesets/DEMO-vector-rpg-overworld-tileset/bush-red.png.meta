@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bush-red_0: -147286300936311773
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

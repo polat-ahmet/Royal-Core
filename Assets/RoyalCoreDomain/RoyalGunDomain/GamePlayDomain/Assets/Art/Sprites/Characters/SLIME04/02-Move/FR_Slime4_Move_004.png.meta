@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FR_Slime4_Move_004_0: -6036458649864014257
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

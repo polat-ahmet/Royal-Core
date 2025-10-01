@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Monster1-Attack_13_0: 1432207144335825776
+      Monster1-Attack_13_1: -7238172350145008105
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

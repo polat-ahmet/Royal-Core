@@ -397,7 +397,18 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bullet_impact_0: 7896114930235605639
+      bullet_impact_1: 3143718428349234060
+      bullet_impact_10: 3733789304383674303
+      bullet_impact_2: -6691810145631921583
+      bullet_impact_3: -6378176564878699407
+      bullet_impact_4: 318938924519874129
+      bullet_impact_5: 1831010515053537495
+      bullet_impact_6: -4216354109896984743
+      bullet_impact_7: 2437332192550559016
+      bullet_impact_8: 7885685168512303050
+      bullet_impact_9: -115187138060868556
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

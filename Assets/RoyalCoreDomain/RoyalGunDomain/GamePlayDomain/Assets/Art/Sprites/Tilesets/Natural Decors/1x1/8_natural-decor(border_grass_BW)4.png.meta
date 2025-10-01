@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      8_natural-decor(border_grass_BW)4_0: -7573507487954535047
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

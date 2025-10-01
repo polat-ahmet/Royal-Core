@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      8_natural-decor(moss_cross_pattern)6_0: -5726053688928020821
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

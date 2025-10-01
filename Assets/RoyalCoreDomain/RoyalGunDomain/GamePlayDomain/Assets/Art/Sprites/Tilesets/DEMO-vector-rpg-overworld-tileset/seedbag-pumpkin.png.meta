@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      seedbag-pumpkin_0: 5713453979356643961
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

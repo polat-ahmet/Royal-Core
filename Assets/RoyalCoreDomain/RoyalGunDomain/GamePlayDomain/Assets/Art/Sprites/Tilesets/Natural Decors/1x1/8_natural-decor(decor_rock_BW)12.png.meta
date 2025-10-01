@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      8_natural-decor(decor_rock_BW)12_0: -2795157803387758048
+      8_natural-decor(decor_rock_BW)12_1: -4003303935984045718
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

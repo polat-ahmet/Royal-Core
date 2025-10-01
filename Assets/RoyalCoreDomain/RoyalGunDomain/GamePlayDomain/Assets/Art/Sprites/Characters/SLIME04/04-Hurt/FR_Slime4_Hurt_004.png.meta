@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FR_Slime4_Hurt_004_0: 8652497279035212679
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

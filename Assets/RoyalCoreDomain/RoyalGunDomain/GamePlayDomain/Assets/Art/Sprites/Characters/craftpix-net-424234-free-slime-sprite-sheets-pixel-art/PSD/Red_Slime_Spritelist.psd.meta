@@ -1897,7 +1897,78 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Red_Slime_Spritelist_0: -1306598062505072671
+      Red_Slime_Spritelist_1: 6797704589621613080
+      Red_Slime_Spritelist_10: -3190092656781658052
+      Red_Slime_Spritelist_11: 5962552114773367361
+      Red_Slime_Spritelist_12: -1274666774164041894
+      Red_Slime_Spritelist_13: -848804838721879286
+      Red_Slime_Spritelist_14: 2709025634078464218
+      Red_Slime_Spritelist_15: 683736131610025939
+      Red_Slime_Spritelist_16: 4439254756434733565
+      Red_Slime_Spritelist_17: -1647732888816677780
+      Red_Slime_Spritelist_18: -5659855329804675818
+      Red_Slime_Spritelist_19: 287579905640168035
+      Red_Slime_Spritelist_2: 4602024724026548
+      Red_Slime_Spritelist_20: -2022060367608215668
+      Red_Slime_Spritelist_21: -3640660216516121974
+      Red_Slime_Spritelist_22: -7867843546058550748
+      Red_Slime_Spritelist_23: 7503261815147142962
+      Red_Slime_Spritelist_24: 3797653812593620512
+      Red_Slime_Spritelist_25: 3599474076673360000
+      Red_Slime_Spritelist_26: -7511603603762873889
+      Red_Slime_Spritelist_27: -1874710230357903120
+      Red_Slime_Spritelist_28: 4908779577008772292
+      Red_Slime_Spritelist_29: -8823651162232363359
+      Red_Slime_Spritelist_3: -4970686202635902055
+      Red_Slime_Spritelist_30: -1560459269417949098
+      Red_Slime_Spritelist_31: -5933701335883250425
+      Red_Slime_Spritelist_32: -4530473144249612776
+      Red_Slime_Spritelist_33: -7851265061072973020
+      Red_Slime_Spritelist_34: -7370816824248947874
+      Red_Slime_Spritelist_35: -5039509886264380877
+      Red_Slime_Spritelist_36: 9108536563103117146
+      Red_Slime_Spritelist_37: 8665694633083217484
+      Red_Slime_Spritelist_38: 5789009081651124737
+      Red_Slime_Spritelist_39: 6312104857729827892
+      Red_Slime_Spritelist_4: -7314305660165462014
+      Red_Slime_Spritelist_40: -5986603873920953573
+      Red_Slime_Spritelist_41: 6473517259728696049
+      Red_Slime_Spritelist_42: -8740864975649814814
+      Red_Slime_Spritelist_43: 3848731117620406239
+      Red_Slime_Spritelist_44: -3706278077025650705
+      Red_Slime_Spritelist_45: -743469860915839450
+      Red_Slime_Spritelist_46: 7056185126408915115
+      Red_Slime_Spritelist_47: 4313461538074278665
+      Red_Slime_Spritelist_48: -4196702149770201741
+      Red_Slime_Spritelist_49: -1916405988101443545
+      Red_Slime_Spritelist_5: 7032150391473431221
+      Red_Slime_Spritelist_50: -4875442355651911496
+      Red_Slime_Spritelist_51: 2774403676273447036
+      Red_Slime_Spritelist_52: 4193426492759676661
+      Red_Slime_Spritelist_53: 5775599505543073230
+      Red_Slime_Spritelist_54: -2817701643856269715
+      Red_Slime_Spritelist_55: -1745353996267007344
+      Red_Slime_Spritelist_56: 1476445974031910607
+      Red_Slime_Spritelist_57: 7753468672454754891
+      Red_Slime_Spritelist_58: 5889013192974714651
+      Red_Slime_Spritelist_59: -897775365656273743
+      Red_Slime_Spritelist_6: 557535654822549577
+      Red_Slime_Spritelist_60: 3811638509656743895
+      Red_Slime_Spritelist_61: 5952823881854896082
+      Red_Slime_Spritelist_62: -3584578945557657196
+      Red_Slime_Spritelist_63: -50241443175521748
+      Red_Slime_Spritelist_64: 7977848305162532413
+      Red_Slime_Spritelist_65: -6123006741154180026
+      Red_Slime_Spritelist_66: 2424958636333422472
+      Red_Slime_Spritelist_67: 4316415503554261633
+      Red_Slime_Spritelist_68: 3813155748392632546
+      Red_Slime_Spritelist_69: 6935509293291917909
+      Red_Slime_Spritelist_7: -7618250748532758702
+      Red_Slime_Spritelist_70: 9203480604997995577
+      Red_Slime_Spritelist_8: 149045819993454057
+      Red_Slime_Spritelist_9: -8871685869213313108
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
