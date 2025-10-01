@@ -33,8 +33,6 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Scripts.Feature
 
         protected override void OnPreInstall()
         {
-            // PlanChild("Player", (addr, p) => new PlayerFeature(addr, p));
-            // PlanChild("Input", (addr, p) => new InputFeature(addr, p));
         }
 
         protected override void OnInstall()
@@ -48,14 +46,9 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Scripts.Feature
 
             var targeting = new TargetingService(reg, LayerMask.GetMask("World"));
             Context.Services.Bind<ITargetingService>(targeting);
-
-            // Context.Services.Bind<IBulletFactory>(new BulletFactoryService(Context.ImportService<IViewProvider>()));
             
             Context.Services.Bind<IPoolRegistryService>(new PoolRegistryService());
-
-            // var player = factory.Add(this, "player", (addr, p) => new PlayerFeature(addr, p));
-            // factory.Add(this, "input", (addr, p) => new InputFeature(addr, p));
-
+            
             //TODO get spawner data
             var spawnerPositions = new List<Vector2>();
             spawnerPositions.Add(new Vector2(5, 5));
@@ -72,10 +65,6 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Scripts.Feature
         
         protected override async Task OnSceneReadyAsync(CancellationTokenSource ct)
         {
-            // LevelData/SpawnConfig gibi sahneye bağlı çocukları burada kur
-            // Örn: Player, EnemySpawner…
-            // PlanChild("Player", (addr, p) => new PlayerFeature(addr, p));
-            // PlanChild("Input", (addr, p) => new InputFeature(addr, p));
             var reg = Context.ImportService<IPoolRegistryService>();
             var vp = Context.ImportService<IViewProvider>();
             
@@ -93,7 +82,6 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Scripts.Feature
                 
             await _factory.CreateAsync(this, "Player", (addr, parent) => new PlayerFeature(addr, parent), ct);
             await _factory.CreateAsync(this, "Input", (addr, parent) => new InputFeature(addr, parent), ct);
-            // Spawner & HUD vs.
         }
 
         protected override void OnStart()

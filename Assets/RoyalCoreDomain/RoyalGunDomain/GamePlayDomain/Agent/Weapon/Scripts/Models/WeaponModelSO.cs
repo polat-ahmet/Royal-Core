@@ -9,7 +9,7 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Mod
 
         public float BulletDamage = 10f;
         public float BulletLife = 2.5f;
-        public string BulletKey = "Bullets/StandardBullet"; // ViewProvider / Pool anahtarı
+        public string BulletKey = "Bullets/StandardBullet"; // ViewProvider / Pool key
         public float Range = 12f;
 
         [Header("Firing")] public float FireRate = 8f; // rounds per second

@@ -5,7 +5,7 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Por
 {
     public interface ITargetable : IPort
     {
-        Transform Transform { get; } // pozisyon/rotasyon için
-        bool IsAlive { get; } // ölüleri filtrele
+        Transform Transform { get; }
+        bool IsAlive { get; }
     }
 }

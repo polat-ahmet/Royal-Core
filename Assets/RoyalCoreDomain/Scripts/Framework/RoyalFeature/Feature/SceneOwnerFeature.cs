@@ -24,19 +24,19 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature
             
             await _scenes.TryLoadScene(SceneKey, ct);
 
-            // Sahneye ihtiyaç duyan çocukların kurulumu:
+            // Setup childs needs scene
             await OnSceneReadyAsync(ct);
         }
 
-        /// Parent sahnesi yüklendi → sahneye bağlı çocukları burada async kur.
+        /// Parent scene loaded → async setup childs scene dependent
         protected virtual Task OnSceneReadyAsync(CancellationTokenSource ct) => Task.CompletedTask;
 
         protected override void OnDispose()
         {
-            // Çocuklar factory tarafından ters sırayla dispose edilecek.
-            // En sonda sahneyi kapat:
-         
-            // fire-and-forget (isteğe bağlı ct kullanılabilir)
+            // Dispose childs
+            
+            // Finally unload scene
+            // fire-and-forget
             _ = _scenes.TryUnloadScene(SceneKey, default);
         }
     }

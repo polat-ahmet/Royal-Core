@@ -12,10 +12,10 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context
     public sealed class FeatureContext : IFeatureContext
     {
         public readonly Locator<IController> Controllers = new();
-        public readonly ListLocator<object> Lists = new(); // genel çoklu kayıtlar (ör. ITickable)
+        public readonly ListLocator<object> Lists = new(); // Multiple instances (ör. ITickable)
         public readonly Locator<IModel> Models = new();
-        public readonly KeyedLocator<string, IPort> PortDirectory = new(); // çoklu instance portları
-        public readonly Locator<IPort> Ports = new(); // tekil portlar (façade)
+        public readonly KeyedLocator<string, IPort> PortDirectory = new(); // Multiple port instances
+        public readonly Locator<IPort> Ports = new(); // single instance port (facade)
         public readonly Locator<IService> Services = new();
         public readonly Locator<IView> Views = new();
 
@@ -29,7 +29,7 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context
 
         public FeatureContext Parent { get; }
 
-        // --- Import helpers (parent zinciri) ---
+        // --- Import helpers (parent chain) ---
         public bool TryImportService<T>(out T s) where T : class, IService
         {
             return Services.TryGet(out s) || Parent?.TryImportService(out s) == true;
@@ -54,12 +54,13 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context
                 : throw new InvalidOperationException($"Port {typeof(T).Name} not found");
         }
 
-        // Keyed directory import (yalnız parent zincirinin üstündeki port directory kullanılacaksa elle eriş)
+        // Keyed directory import
         public bool TryImportKeyed<T>(string id, out T p) where T : class, IPort
         {
-            // Önce local
+            // First local
             if (PortDirectory.TryGet(id, out p)) return true;
-            // Sonra parent zinciri
+            
+            // Then parent chain
             var node = Parent;
             while (node != null)
             {
@@ -70,7 +71,7 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context
             return false;
         }
 
-        // --- Export helpers (parent'a görünür kıl) ---
+        // --- Export helpers (make visible to parent) ---
         public void Export<T>(T port) where T : class, IPort
         {
             Parent?.Ports.Bind(port);
@@ -81,7 +82,7 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context
             Parent?.PortDirectory.Register(id, port);
         }
 
-        // (İsteğe bağlı) dinamik keşif için parent tarafında IPortRegistry export edebilirsiniz.
+        // (optional) export IPortRegistry on the parent for dynamic discovery
         public IPortRegistry EnsureLocalPortRegistry()
         {
             if (!Ports.TryGet<IPortRegistry>(out var reg))

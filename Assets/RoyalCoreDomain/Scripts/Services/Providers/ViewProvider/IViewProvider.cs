@@ -8,7 +8,6 @@ namespace RoyalCoreDomain.Scripts.Services.Providers.ViewProvider
     {
         T LoadView<T>(string key) where T : Component, IView; // sync
 
-        void Release(Object obj); // optional
-        // İleride: Task<T> LoadViewAsync<T>(string key)
+        void Release(Object obj);
     }
 }

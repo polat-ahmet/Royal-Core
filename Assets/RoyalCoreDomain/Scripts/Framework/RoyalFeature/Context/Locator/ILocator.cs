@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context.Locator
 {
-    // Tip başına tek binding
+    // Single instance each type
     public interface ILocator<TBase> where TBase : class
     {
         void Bind<T>(T instance) where T : class, TBase;
@@ -12,7 +12,7 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context.Locator
         void Clear();
     }
 
-    // Aynı tipten çoklu instance (liste)
+    // Multiple instance same type
     public interface IListLocator<TBase> where TBase : class
     {
         void Add<T>(T instance) where T : class, TBase;
@@ -21,7 +21,7 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Context.Locator
         void Clear();
     }
 
-    // Anahtarlı (directory) — id -> instance
+    // Keyed (directory) — id -> instance
     public interface IKeyedLocator<TKey, TBase> where TKey : notnull where TBase : class
     {
         bool Register<T>(TKey key, T instance) where T : class, TBase;

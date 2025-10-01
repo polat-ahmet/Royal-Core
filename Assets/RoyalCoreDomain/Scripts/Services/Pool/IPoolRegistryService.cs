@@ -7,7 +7,7 @@ namespace RoyalCoreDomain.Scripts.Services.Pool
     {
         IPool<T> GetOrCreate<T>(PoolId id, Func<IPool<T>> create);
         bool TryGet<T>(PoolId id, out IPool<T> pool);
-        void Remove(PoolId id);      // havuzu kapat/temizle
-        void Clear();                // tüm havuzları kapat/temizle
+        void Remove(PoolId id);      // clear pool
+        void Clear();                // clear all pools
     }
 }

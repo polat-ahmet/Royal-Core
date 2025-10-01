@@ -21,7 +21,7 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Con
 {
     public class WeaponController : BaseController, IUpdatable, IWeaponPort
     {
-        private readonly IAudioService _audio; // opsiyonel
+        private readonly IAudioService _audio;
         private readonly FeatureContext _ctx;
         private readonly float _fireInterval; // 1 / FireRate
         private readonly WeaponModel _m;
@@ -32,7 +32,7 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Con
 
         private readonly ITargetingService _targeting;
         private readonly WeaponView _v;
-        private readonly IViewProvider _views; // FX için
+        private readonly IViewProvider _views; // FX
 
         private IWeaponHolder _holder;
         private ITargetable _locked;
@@ -93,12 +93,11 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Con
 
         private void AutoAcquireAndAim(float dt)
         {
-            // Geçerli hedef değilse yeniden edin
             bool NeedAcquire()
             {
                 if (_locked == null || !_locked.IsAlive) return true;
                 var dist2 = ((Vector2)_locked.Transform.position - (Vector2)_v.Muzzle.position).sqrMagnitude;
-                return dist2 > _m.Range * _m.Range * 1.1f; // biraz histerezis
+                return dist2 > _m.Range * _m.Range * 1.1f;
             }
 
             if (NeedAcquire())
@@ -115,13 +114,13 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Con
                 Vector2 dir;
                 dir = (tpos - origin).normalized;
 
-                SetAim(dir); // mevcut API’n
-                _m.IsFiringHeld = true; // otomatik ateş
+                SetAim(dir);
+                _m.IsFiringHeld = true;
                 _v.LookAt(_m.AimDir);
             }
             else
             {
-                _m.IsFiringHeld = false; // hedef yoksa ateşi bırak
+                _m.IsFiringHeld = false;
             }
         }
 
@@ -165,7 +164,6 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Con
                 // fx.transform.position = pos;
                 // fx.transform.rotation = Quaternion.FromToRotation(Vector3.right, dir);
                 // fx.Play(true);
-                // basit: auto-release particle; yoksa küçük bir FXRelease helper ile iade et
             }
 
             // if (_audio != null && !string.IsNullOrEmpty(_m.FireSfx))

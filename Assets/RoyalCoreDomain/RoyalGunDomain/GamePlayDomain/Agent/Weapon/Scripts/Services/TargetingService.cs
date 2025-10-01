@@ -5,7 +5,7 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Ser
 {
     public sealed class TargetingService : ITargetingService
     {
-        private readonly LayerMask _losMask; // opsiyonel: "World" çarpışma maskesi
+        private readonly LayerMask _losMask;
         private readonly ITargetRegistry _reg;
 
         public TargetingService(ITargetRegistry reg, LayerMask losMask = default)
@@ -27,11 +27,11 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Ser
                 var d2 = (p - origin).sqrMagnitude;
                 if (d2 > r2 || d2 >= bestD2) continue;
 
-                // (Opsiyonel) line-of-sight
+                // (optional) line-of-sight
                 if (_losMask != 0)
                 {
                     var hit = Physics2D.Linecast(origin, p, _losMask);
-                    if (hit.collider) continue; // arada duvar var
+                    if (hit.collider) continue;
                 }
 
                 best = t;

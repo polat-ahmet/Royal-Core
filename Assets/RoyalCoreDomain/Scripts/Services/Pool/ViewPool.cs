@@ -12,7 +12,7 @@ namespace RoyalCoreDomain.Scripts.Services.Pool
     where TView : Component, IView, IPoolable
 {
     private readonly string _viewKey;           // "Bullet/Views/BulletView"
-    private readonly Transform _holder;         // pool objelerinin saklanacağı parent
+    private readonly Transform _holder;         // Parent object holds pooled objects
     private readonly PoolConfig _cfg;
     private readonly IViewProvider _views;
     private readonly Stack<TView> _stack = new();
@@ -67,9 +67,6 @@ namespace RoyalCoreDomain.Scripts.Services.Pool
             throw new System.InvalidOperationException($"[ViewPool] MaxSize reached for '{_viewKey}'");
         var v = _views.LoadView<TView>(_viewKey);
         _created++;
-        // opsiyonel: PoolLink bağla (kendi kendini iade için)
-        // var link = v.GetComponent<PoolLink>() ?? v.gameObject.AddComponent<PoolLink>();
-        // link.Pool = (IPool<Component>)(object)this; // boxed
         return v;
     }
 

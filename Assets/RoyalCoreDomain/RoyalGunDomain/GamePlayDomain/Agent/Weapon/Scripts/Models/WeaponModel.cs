@@ -12,7 +12,7 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Mod
         public int AmmoInMag;
         public string BulletKey;
         public float BulletSpeed, BulletDamage, BulletLife;
-        public float Cooldown; // s (0 → hazır)
+        public float Cooldown;
         public float FireRate;
         public bool IsFiringHeld;
         public bool IsReloading;

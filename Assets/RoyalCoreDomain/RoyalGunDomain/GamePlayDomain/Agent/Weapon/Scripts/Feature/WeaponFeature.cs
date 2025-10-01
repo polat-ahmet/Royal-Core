@@ -46,15 +46,14 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Fea
 
             _ctrl = new WeaponController(Context, _model, _view);
             Context.Controllers.Bind(_ctrl);
-
-            // Holder portu varsa mount’a bağla
+            
             if (Context.TryImportPort<IWeaponHolder>(out var holder) && holder?.WeaponMount)
             {
                 _view.transform.SetParent(holder.WeaponMount, false);
                 _ctrl.AttachHolder(holder);
             }
 
-            // Port export (alt interface’ler de isteniyorsa helper ile hepsini export edin)
+            // Port export
             Context.Ports.Bind<IWeaponPort>(_ctrl);
             Context.Export<IWeaponPort>(_ctrl);
 

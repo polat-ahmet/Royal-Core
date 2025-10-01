@@ -24,7 +24,7 @@ namespace RoyalCoreDomain.Scripts.Services.UI
         public T Show<T>(string key, UILayer layer = UILayer.HUD) where T : Component, IView
         {
             var v = _views.LoadView<T>(key);
-            // Tek Canvas altındaki ilgili layer paneline yerleştir
+
             var parent = _root.GetLayerRoot(layer);
             var rt = v.transform as RectTransform;
             if (rt != null)
@@ -36,7 +36,6 @@ namespace RoyalCoreDomain.Scripts.Services.UI
             }
             else
             {
-                // UI değilse yine de parent et
                 v.transform.SetParent(parent, false);
             }
 
@@ -47,13 +46,11 @@ namespace RoyalCoreDomain.Scripts.Services.UI
         public void Close<T>(T view) where T : Component, IView
         {
             if (!view) return;
-
-            // Katman listesinden çıkar
+            
             foreach (var kv in _byLayer)
                 if (kv.Value.Remove(view))
                     break;
 
-            // ViewProvider'a iade
             _views.Release(view.gameObject);
         }
 
@@ -81,16 +78,13 @@ namespace RoyalCoreDomain.Scripts.Services.UI
             if (_popupStack.Count == 0) return;
             Debug.Log("Popping popup");
             var v = _popupStack.Pop();
-            // tip paramı yok; en geniş Close çağrısı yeterli
+
             if (v is IView)
             {
                 Debug.Log("Popping popup view");
-                // generic Close<T> çağırmak için reflection’a gerek yok;
                 
-                // layer listelerinden de düş
                 foreach (var kv in _byLayer) kv.Value.Remove(v);
                 
-                // doğrudan ViewProvider.Release yeterli:
                 _views.Release(v.gameObject);
             }
         }

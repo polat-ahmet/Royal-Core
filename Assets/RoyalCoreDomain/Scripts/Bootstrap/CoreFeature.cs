@@ -93,16 +93,8 @@ namespace RoyalCoreDomain.Scripts.Bootstrap
                 Context.ImportService<IUpdateService<ILateUpdatable>>());
 
             Context.ImportService<ISceneLoaderService>().InitEntryPoint();
-
             
             _ = InitEntryPoint(_ct);
-            
-
-            // var cameraService = Context.ImportService<ICameraFollowService>();
-            // lateUpdateService.RegisterUpdatable(cameraService);
-
-            // var factory = Context.ImportService<IFeatureFactory>();
-            // factory.Add(this, "GamePlay", (addr, p) => new GamePlayFeature(addr, p));
         }
         
         private async Awaitable InitEntryPoint(CancellationTokenSource ct)

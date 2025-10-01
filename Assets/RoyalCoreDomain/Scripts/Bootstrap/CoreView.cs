@@ -6,9 +6,9 @@ namespace RoyalCoreDomain.Scripts.Bootstrap
     [DisallowMultipleComponent]
     public sealed class CoreView : MonoBehaviour, IView
     {
-        [Header("Anchors")] public Transform Root; // opsiyonel
+        [Header("Anchors")] public Transform Root; // optional
 
-        public Transform DriversParent; // TickDriver gibi runtime Mono'lar buraya eklenir
+        public Transform DriversParent; // Add here runtime Mono's like TickDriver
 
         private void Reset()
         {

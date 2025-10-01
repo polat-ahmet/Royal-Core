@@ -14,7 +14,7 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Enemy.Scripts.Services
     {
         private readonly BaseFeature _baseFeature;
         private readonly IFeatureFactory _factory;
-        private readonly float _interval; // varsayılan
+        private readonly float _interval;
         private readonly List<Vector2> _spawnPoints;
         private readonly ITargetRegistry _targetRegistry;
         private float _timer;

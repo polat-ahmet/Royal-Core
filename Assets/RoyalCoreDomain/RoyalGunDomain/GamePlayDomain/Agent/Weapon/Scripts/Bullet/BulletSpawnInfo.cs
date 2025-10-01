@@ -9,7 +9,7 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Bul
         public readonly float Speed;
         public readonly float Damage;
         public readonly float LifeTime;
-        public readonly string BulletKey; // prefab/resource id (pool anahtarı)
+        public readonly string BulletKey; // prefab/resource id (pool key)
 
         public BulletSpawnInfo(Vector2 pos, Vector2 dir, float speed, float dmg, float life, string key)
         {

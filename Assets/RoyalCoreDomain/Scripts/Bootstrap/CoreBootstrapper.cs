@@ -27,9 +27,6 @@ namespace RoyalCoreDomain.Scripts.Bootstrap
             _core.PreInstall();
             _core.Install();
             _core.Resolve();
-           
-            // _core.Build();
-            
         }
 
         private void Start()

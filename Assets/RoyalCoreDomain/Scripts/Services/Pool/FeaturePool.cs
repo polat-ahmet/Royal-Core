@@ -64,15 +64,14 @@ namespace RoyalCoreDomain.Scripts.Services.Pool
             throw new System.InvalidOperationException($"[FeaturePool] MaxSize reached for '{typeof(TFeature).Name}'");
 
         var f = _create(_parent);
-        f.PreInstall(); f.Install(); f.Resolve(); // park (Start yok)
+        f.PreInstall(); f.Install(); f.Resolve(); // park (no Start)
         _created++;
         return f;
     }
 
     private void Park(TFeature f)
     {
-        // Görünümleri varsa pasife al; tick açık olmadığı için Stop sonrası zaten pasif
-        // (View provider ile Release etmiyoruz; pool içinde saklı)
+        
     }
 }
 }

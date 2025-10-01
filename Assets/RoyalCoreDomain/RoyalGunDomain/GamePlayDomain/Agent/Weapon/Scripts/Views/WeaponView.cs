@@ -21,10 +21,6 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Agent.Weapon.Scripts.Vie
 
         public void LookAt(Vector2 dir, bool flipXByDirX = true)
         {
-            // if (dir.sqrMagnitude < 1e-6f) return;
-            // var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            // Root.rotation = Quaternion.Euler(0, 0, angle);
-            // if (flipXByDirX && SR) SR.flipY = dir.x < 0f; // 2D sprite “silah ters” hissi
             var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
             FlipSprite(angle > 90 || angle < -90);

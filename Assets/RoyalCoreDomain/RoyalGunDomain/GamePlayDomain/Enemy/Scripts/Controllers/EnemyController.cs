@@ -94,9 +94,6 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Enemy.Scripts.Controller
             Debug.Log("Enemy Controller Die");
             _audioService.PlayAudio(AudioClipType.EnemyDeath, AudioChannelType.Fx);
             OnEnemyDied?.Invoke();
-            
-            // animasyon, sfx, loot vs…
-            // View’ı iade etmek için Feature Dispose akışı iş görecek; istersen burada da tetikleyebilirsin
         }
 
         public override void Dispose()

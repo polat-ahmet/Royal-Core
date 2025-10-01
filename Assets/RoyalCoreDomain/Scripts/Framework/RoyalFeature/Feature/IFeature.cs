@@ -15,7 +15,6 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature
         FeatureContext Context { get; }
 
         // lifecycle
-        // void Build();
         void PreInstall();
         void Install();
         Task WarmupAsync(CancellationTokenSource ct);

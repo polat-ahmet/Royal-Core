@@ -13,14 +13,12 @@ namespace RoyalCoreDomain.Scripts.Services.Providers.ModelProvider
             if (asset == null)
                 throw new InvalidOperationException(
                     $"[ModelProvider] SO not found at Resources/{k} (no extension; case-sensitive).");
-
-            // ÖNEMLİ: Asset’i runtime’da değiştirmemek için clone al
+            
             return clone ? Object.Instantiate(asset) : asset;
         }
 
         public void Release(Object obj)
         {
-            // ScriptableObject için genelde gerek yok; clone ise Destroy edebilirsin.
             if (obj != null) Object.Destroy(obj);
         }
 

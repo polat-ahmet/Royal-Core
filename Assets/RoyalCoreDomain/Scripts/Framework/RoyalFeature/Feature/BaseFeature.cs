@@ -31,14 +31,6 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature
         protected void PlanChild(string name, Func<string, IFeature, IFeature> factory)
             => _plannedChildren.Add((name, factory));
 
-        // public void Build()
-        // {
-        //     PreInstall();
-        //     Install();
-        //     Resolve();
-        //     Start();
-        // }
-        
         public void PreInstall()
         {
             if (State != FeatureState.New) return;
@@ -142,7 +134,7 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Feature
             OnDispose();
             Debug.Log(Address + " Feature Disposed");
 
-            // Context temizliği (SRP)
+            // Context Clear
             Context.Services.Clear();
             Context.Controllers.Clear();
             Context.Models.Clear();

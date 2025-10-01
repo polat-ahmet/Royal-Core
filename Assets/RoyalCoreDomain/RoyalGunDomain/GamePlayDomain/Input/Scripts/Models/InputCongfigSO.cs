@@ -9,7 +9,7 @@ namespace RoyalCoreDomain.RoyalGunDomain.GamePlayDomain.Input.Scripts.Models
 
         [Range(0f, 0.5f)] public float DeadZone = 0.1f;
 
-        [Tooltip("Move değişimi bu eşiğin altında ise push yapma.")] [Range(0f, 0.2f)]
+        [Range(0f, 0.2f)]
         public float ChangeThreshold = 0.02f;
 
         [Header("Visual")] public bool ShowOnTouch = true;

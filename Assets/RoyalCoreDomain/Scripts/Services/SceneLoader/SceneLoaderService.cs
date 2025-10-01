@@ -38,22 +38,6 @@ namespace RoyalCoreDomain.Scripts.Services.SceneLoader
             return true;
         }
 
-        // public async Awaitable<bool> TryLoadScene<TEnterData>(SceneType sceneType, TEnterData enterData, CancellationTokenSource cancellationTokenSource) where TEnterData : class, IInitiatorEnterData
-        // {
-        //     if (!await TryLoadScene(sceneType.ToString(), cancellationTokenSource))
-        //     {
-        //         return false;
-        //     }
-        //    
-        //     // await _sceneInitiatorsService.InvokeInitiatorLoadEntryPoint(sceneType, enterData, cancellationTokenSource);
-        //     return true;
-        // }
-
-        // public async Awaitable StartScene<TEnterData>(SceneType sceneType, TEnterData enterData, CancellationTokenSource cancellationTokenSource) where TEnterData : class, IInitiatorEnterData
-        // {
-        //     // await _sceneInitiatorsService.InvokeInitiatorStartEntryPoint(sceneType, enterData, cancellationTokenSource);
-        // }
-
         public async Awaitable<bool> TryUnloadScene(string sceneName, CancellationTokenSource cancellationTokenSource)
         {
             // var sceneName = sceneType.ToString();

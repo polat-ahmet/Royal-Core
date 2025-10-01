@@ -8,21 +8,13 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.FeatureFactory
 {
     public sealed class FeatureFactory : IFeatureFactory
     {
-        // public void Build(IFeature root)
-        // {
-        //     root.PreInstall();
-        //     root.Install();
-        //     root.Resolve();
-        //     root.Start();
-        // }
-        //
         public T Create<T>(IFeature parent, string name, Func<string, IFeature, T> create, string id = null)
             where T : IFeature
         {
             if (create == null) throw new ArgumentNullException(nameof(create));
             var address = FeatureAddress.ChildOf(parent?.Address, name, id);
             var child = create(address, parent);
-            // child.Build();
+
             BuildSync(child);
             
             return child;
@@ -58,29 +50,28 @@ namespace RoyalCoreDomain.Scripts.Framework.RoyalFeature.Services.FeatureFactory
             child.Start();
             return child;
         }
-        
-        public void BuildSync(IFeature root)
+
+        private void BuildSync(IFeature root)
         {
             root.PreInstall();
             root.Install();
             root.Resolve();
-            // Warmup atlandı → tek frame kurulum
-            // root.Start();
+            // Warmup skipped → single frame setup
         }
-        
-        public async Task BuildAsync(IFeature root, CancellationTokenSource ct)
+
+        private async Task BuildAsync(IFeature root, CancellationTokenSource ct)
         {
             root.PreInstall();
             root.Install();
             root.Resolve();
             await root.WarmupAsync(ct);
-            // root.Start();
         }
 
         public void Remove(IFeature feature)
         {
             if (feature == null) return;
-            // lifecycle simetri
+            
+            // lifecycle symmetry
             feature.Stop();
             feature.Parent?.RemoveChild(feature);
             feature.Dispose();
